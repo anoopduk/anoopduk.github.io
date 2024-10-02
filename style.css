@@ -42,22 +42,36 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Profile Photo */
+/* Header Layout using Flexbox */
+.header-container {
+    padding: 20px;
+    background-color: #3B4252; /* Match container background */
+    border-radius: 8px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    flex: 1 1 60%;
+    min-width: 250px;
+}
+
+.header-image {
+    flex: 1 1 35%;
+    text-align: right;
+}
+
 .profile-photo {
-    float: right;
-    margin: 10px;
-    width: 120px;
+    max-width: 150px;
+    width: 100%;
     height: auto;
     border-radius: 15%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-    .profile-photo {
-        float: none;
-        display: block;
-        margin: 10px auto;
-    }
 }
 
 /* Social Icons */
@@ -155,12 +169,24 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .social-icons {
-        gap: 10px;
+    .header-text {
+        flex: 1 1 100%;
+    }
+
+    .header-image {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .profile-photo {
+        max-width: 120px;
     }
 
     .publication-links {
@@ -177,7 +203,7 @@ footer p {
 
 @media (max-width: 600px) {
     .container {
-        padding: 10px;
+        padding: 15px;
     }
 
     .profile-photo {
