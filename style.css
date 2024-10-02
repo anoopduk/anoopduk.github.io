@@ -118,7 +118,7 @@ a:hover {
 /* External Link Icon */
 .external::after {
     content: "\f35d"; /* Font Awesome external link icon */
-    font-family: "Font Awesome 5 Free"; /* Ensure Font Awesome is loaded */
+    font-family: "Font Awesome 6 Free"; /* Updated to Font Awesome 6 */
     font-weight: 900;
     margin-left: 5px;
     font-size: 0.8em;
