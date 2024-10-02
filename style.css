@@ -1,3 +1,6 @@
+/* style.css */
+
+/* Global Styles */
 body {
     background-color: #2E3440; /* Nord dark background */
     color: #D8DEE9; /* Nord text color */
@@ -9,42 +12,55 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto; /* Added top and bottom margin for spacing */
     padding: 20px;
+    background-color: #3B4252; /* Slightly lighter background for container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 
+/* Typography */
 h1, h2 {
     color: #81A1C1; /* Nord blue */
+    margin-bottom: 20px;
 }
 
+p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Links */
 a {
     color: #88C0D0; /* Nord cyan */
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
+    color: #81A1C1; /* Nord blue */
     text-decoration: underline;
 }
 
-
-footer {
-    text-align: center;
-    margin-top: 40px;
+/* Profile Photo */
+.profile-photo {
+    float: right;
+    margin: 10px;
+    width: 120px;
+    height: auto;
+    border-radius: 15%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-html {
-    scroll-behavior: smooth;
+@media (max-width: 768px) {
+    .profile-photo {
+        float: none;
+        display: block;
+        margin: 10px auto;
+    }
 }
 
-.external::after {
-    content: "\f35d";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: #88C0D0; /* Nord cyan */
-}
-
+/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -63,8 +79,10 @@ html {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
+/* Publication Links */
 .publication-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
 }
@@ -83,33 +101,101 @@ html {
     color: #81A1C1; /* Nord blue */
 }
 
+/* External Link Icon */
+.external::after {
+    content: "\f35d"; /* Font Awesome external link icon */
+    font-family: "Font Awesome 5 Free"; /* Ensure Font Awesome is loaded */
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #88C0D0; /* Nord cyan */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #3B4252; /* Match container background */
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Back to Top Button */
 #up-arrow {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 30px; /* Positioned at bottom-right */
     background-color: #3B4252; /* Nord lighter background */
     color: #D8DEE9; /* Nord text color */
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    display: none;
+    display: none; /* Initially hidden */
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 1.2em;
     cursor: pointer;
     z-index: 1000;
-    transition: opacity 0.3s, background-color 0.3s; /* Added transitions */
+    transition: opacity 0.3s, background-color 0.3s, transform 0.3s; /* Added transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #up-arrow:hover {
     background-color: #434C5E; /* Darker hover state */
+    transform: translateY(-5px);
 }
 
 .show {
     display: flex !important;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .publication-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #up-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+}
+
 @media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .profile-photo {
+        width: 100px;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+    }
+
+    .publication-links a {
+        font-size: 0.8em;
+    }
+
+    #up-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9em;
+    }
 }
 
