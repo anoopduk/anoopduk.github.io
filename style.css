@@ -1,6 +1,3 @@
-/* style.css */
-
-/* Global Styles */
 body {
     background-color: #2E3440; /* Nord dark background */
     color: #D8DEE9; /* Nord text color */
@@ -12,69 +9,42 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 20px auto; /* Added top and bottom margin for spacing */
+    margin: 0 auto;
     padding: 20px;
-    background-color: #3B4252; /* Slightly lighter background for container */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
 }
 
-/* Typography */
 h1, h2 {
     color: #81A1C1; /* Nord blue */
-    margin-bottom: 20px;
 }
 
-p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-/* Links */
 a {
     color: #88C0D0; /* Nord cyan */
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 a:hover {
-    color: #81A1C1; /* Nord blue */
     text-decoration: underline;
 }
 
-/* Header Layout using Flexbox */
-.header-container {
-    padding: 20px;
-    background-color: #3B4252; /* Match container background */
-    border-radius: 8px;
+
+footer {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+html {
+    scroll-behavior: smooth;
 }
 
-.header-text {
-    flex: 1 1 60%;
-    min-width: 250px;
+.external::after {
+    content: "\f35d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #88C0D0; /* Nord cyan */
 }
 
-.header-image {
-    flex: 1 1 35%;
-    text-align: right;
-}
-
-.profile-photo {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
-    border-radius: 15%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -93,10 +63,8 @@ a:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Publication Links */
 .publication-links {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
 }
@@ -115,113 +83,33 @@ a:hover {
     color: #81A1C1; /* Nord blue */
 }
 
-/* External Link Icon */
-.external::after {
-    content: "\f35d"; /* Font Awesome external link icon */
-    font-family: "Font Awesome 6 Free"; /* Updated to Font Awesome 6 */
-    font-weight: 900;
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: #88C0D0; /* Nord cyan */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    background-color: #3B4252; /* Match container background */
-    border-radius: 8px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Back to Top Button */
 #up-arrow {
     position: fixed;
     bottom: 20px;
-    right: 30px; /* Positioned at bottom-right */
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #3B4252; /* Nord lighter background */
     color: #D8DEE9; /* Nord text color */
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    display: none; /* Initially hidden */
+    display: none;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 16px;
     cursor: pointer;
     z-index: 1000;
-    transition: opacity 0.3s, background-color 0.3s, transform 0.3s; /* Added transitions */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s, background-color 0.3s; /* Added transitions */
 }
 
 #up-arrow:hover {
     background-color: #434C5E; /* Darker hover state */
-    transform: translateY(-5px);
 }
 
 .show {
     display: flex !important;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-text {
-        flex: 1 1 100%;
-    }
-
-    .header-image {
-        flex: 1 1 100%;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .profile-photo {
-        max-width: 120px;
-    }
-
-    .publication-links {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    #up-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1em;
-    }
-}
-
 @media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-
-    .profile-photo {
-        width: 100px;
-    }
-
-    .social-icons a {
-        font-size: 1.5em;
-    }
-
-    .publication-links a {
-        font-size: 0.8em;
-    }
-
-    #up-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9em;
-    }
 }
 
