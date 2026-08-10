@@ -1,0 +1,25 @@
+---
+layout: page
+title: Research
+eyebrow: Scientific agenda
+description: My research asks how computation can explore molecular and reaction space without losing chemical meaning.
+permalink: /research/
+---
+
+My work begins with a chemical question rather than a preferred algorithm. I use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.
+
+## Automated exploration
+
+Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. I am interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
+
+## Molecular discovery and mechanism
+
+I study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.
+
+## AI for science
+
+Machine learning is valuable when it helps us ask better scientific questions, explore otherwise inaccessible spaces or identify relationships that can be tested chemically. Prediction alone is not enough. The model, data and explanation must be examined together, with uncertainty and domain limits made explicit.
+
+## Group research
+
+Detailed projects, publications, software and current group members belong on the [AnoopLab website](https://anooplab.github.io/). Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).

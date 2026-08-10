@@ -1,0 +1,16 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="A. Anoop, home">A. Anoop</a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      {% for item in site.data.navigation %}
+        {% if item.external %}
+          <a href="{{ item.url }}" target="_blank" rel="noreferrer">{{ item.label }}<span aria-hidden="true"> ↗</span></a>
+        {% else %}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+

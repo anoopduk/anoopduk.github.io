@@ -1,0 +1,38 @@
+<div class="profile-groups">
+  <div>
+    <h2>Academic profiles</h2>
+    <ul class="plain-list inline-list">
+      {% for item in site.data.profile.academic %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
+          >{{ item.label }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Code and research group</h2>
+    <ul class="plain-list inline-list">
+      {% for item in site.data.profile.code %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
+          >{{ item.label }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Connect</h2>
+    <ul class="plain-list inline-list">
+      {% for item in site.data.profile.social %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
+          >{{ item.label }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

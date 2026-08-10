@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Writing by A. Anoop</title>
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="self" />
+  <link href="{{ '/' | absolute_url }}" />
+  <id>{{ '/' | absolute_url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author><name>A. Anoop</name></author>
+  {% assign articles = site.pages | where: "kind", "article" | sort: "date" | reverse %}
+  {% for item in articles limit: 20 %}
+  <entry>
+    <title>{{ item.title | xml_escape }}</title>
+    <link href="{{ item.url | absolute_url }}" />
+    <id>{{ item.url | absolute_url }}</id>
+    <updated>{{ item.date | date_to_xmlschema }}</updated>
+    <summary>{{ item.description | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>
+
