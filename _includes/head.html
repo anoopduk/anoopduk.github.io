@@ -1,0 +1,45 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#101715" />
+{% seo %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any" />
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Writing by A. Anoop"
+  href="{{ '/feed.xml' | absolute_url }}"
+/>
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+{% if page.layout == 'post' %}
+  <link rel="stylesheet" href="{{ '/assets/css/writing.css' | relative_url }}" />
+{% endif %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "A. Anoop",
+    "alternateName": [
+      "Anoop Ayyappan",
+      "Anakuthil Anoop",
+      "Anakuthil Anoop Ayyappan"
+    ],
+    "url": "{{ '/' | absolute_url }}",
+    "image": "{{ '/anoop.png' | absolute_url }}",
+    "jobTitle": "Professor",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Digital University Kerala",
+      "url": "https://duk.ac.in/"
+    },
+    "sameAs": [
+      "https://anooplab.github.io/",
+      "https://github.com/anooplab",
+      "https://scholar.google.com/citations?user=QgKaomgAAAAJ",
+      "https://orcid.org/0000-0002-8116-5506",
+      "https://www.researchgate.net/profile/Anakuthil_Anoop/publications",
+      "https://www.linkedin.com/in/anoop-a-9286125/",
+      "https://x.com/A_Anoop_A",
+      "https://www.instagram.com/a_anoop_a/"
+    ]
+  }
+</script>

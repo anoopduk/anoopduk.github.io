@@ -1,0 +1,28 @@
+title: A. Anoop
+description: >-
+  Personal website of A. Anoop, professor and computational chemist working on
+  automated chemical exploration, molecular discovery and AI for science.
+url: https://anoopduk.github.io
+baseurl: ""
+lang: en-GB
+timezone: Asia/Kolkata
+
+author:
+  name: A. Anoop
+  url: https://anoopduk.github.io/about/
+
+logo: /anoop.png
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: "writing"
+    values:
+      layout: post
+      kind: article
+
+exclude:
+  - README.md

@@ -1,24 +1,27 @@
 ---
-layout: post
-title: "Writing"
-description: "Notes on computational chemistry, AI for science, education and academic institutions."
+layout: page
+title: Writing
+eyebrow: Notes and essays
+description: Writing on computational chemistry, AI for science, research practice, education and academic institutions.
 permalink: /writing/
+kind: archive
 ---
 
-{% assign writing_pages = site.pages | where_exp: "item", "item.path contains 'writing/'" | sort: "date" | reverse %}
+{% assign articles = site.pages | where: "kind", "article" | sort: "date" | reverse %}
 
-{% if writing_pages.size > 1 %}
-<ul class="writing-list">
-  {% for item in writing_pages %}
-    {% unless item.path == "writing/index.md" %}
-      <li>
-        <a href="{{ item.url | relative_url }}"><strong>{{ item.title }}</strong></a>
-        {% if item.date %}<br><small>{{ item.date | date: "%-d %B %Y" }}</small>{% endif %}
-        {% if item.description %}<br>{{ item.description }}{% endif %}
-      </li>
-    {% endunless %}
+{% if articles.size > 0 %}
+
+<ol class="writing-list">
+  {% for item in articles %}
+    <li>
+      <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%-d %B %Y" }}</time>
+      <div>
+        <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+        {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+      </div>
+    </li>
   {% endfor %}
-</ul>
+</ol>
 {% else %}
-The writing archive is being prepared. New essays will appear here.
+The first essays are being prepared.
 {% endif %}
