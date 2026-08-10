@@ -13,6 +13,9 @@
 {% if page.layout == 'post' %}
   <link rel="stylesheet" href="{{ '/assets/css/writing.css' | relative_url }}" />
 {% endif %}
+{% if page.extra_css %}
+  <link rel="stylesheet" href="{{ page.extra_css | relative_url }}" />
+{% endif %}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
