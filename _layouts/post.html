@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}A. Anoop</title>
+  <meta name="description" content="{{ page.description | default: site.description | default: 'Writing by A. Anoop on computational chemistry, AI for science, education and academic institutions.' | escape }}">
+  <meta name="author" content="A. Anoop">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/writing.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="site-name" href="{{ '/' | relative_url }}">A. Anoop</a>
+      <div class="nav-links">
+        <a href="{{ '/writing/' | relative_url }}">Writing</a>
+        <a href="https://anooplab.github.io/">AnoopLab</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">Writing</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="dek">{{ page.description }}</p>
+        {% endif %}
+        {% if page.date %}
+          <p class="byline">
+            <span>A. Anoop</span>
+            <span aria-hidden="true">·</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+          </p>
+        {% endif %}
+      </header>
+
+      <div class="article-body">
+        {{ content }}
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <p>© {{ site.time | date: "%Y" }} A. Anoop</p>
+      <p><a href="{{ '/writing/' | relative_url }}">All writing</a></p>
+    </div>
+  </footer>
+</body>
+</html>
