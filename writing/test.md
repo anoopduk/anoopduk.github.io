@@ -6,8 +6,6 @@ description: "A test of Markdown publishing through GitHub Pages."
 permalink: /writing/test/
 ---
 
-# Test post
-
 This is a test article written in **Markdown**.
 
 ## What Markdown allows
