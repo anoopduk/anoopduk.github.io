@@ -1,6 +1,9 @@
 ---
+layout: post
 title: "Test post"
 date: 2026-08-10
+description: "A test of Markdown publishing through GitHub Pages."
+permalink: /writing/test/
 ---
 
 # Test post
