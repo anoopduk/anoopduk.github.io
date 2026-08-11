@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Talks
-eyebrow: Lectures and academic engagements
-description: A historical archive of invited lectures, conferences, workshops and other academic engagements by A. Anoop.
-permalink: /talks/
+title: Engagements
+eyebrow: Events and academic activity
+description: A historical archive of conferences, workshops, lectures, orientation programmes and other academic engagements by A. Anoop.
+permalink: /engagements/
 extra_css: /assets/css/talks.css
 extra_js: /assets/js/talks.js
 ---
 
-My talks generally address four connected themes: exploring chemical space computationally, automating reaction discovery, using machine learning responsibly in science, and understanding how academic institutions shape research and teaching.
+These engagements span computational chemistry, molecular discovery, machine learning in science, research strategy, teaching and academic development.
 
 ## Academic engagements archive
 
-This is a historical record of invited lectures, conferences, workshops, orientation programmes and related academic activity. Inclusion records my participation; it does not necessarily mean that I delivered a lecture at every listed event.
+This is a historical record of conferences, workshops, invited lectures, orientation programmes and related academic activity. Inclusion records my participation; it does not necessarily mean that I delivered a lecture at every listed event.
 
 <div class="engagement-tools" role="search" aria-label="Filter academic engagements">
   <div class="engagement-field engagement-field--search">
@@ -26,17 +26,44 @@ This is a historical record of invited lectures, conferences, workshops, orienta
   <button id="engagement-clear" class="engagement-clear" type="button">Clear</button>
 </div>
 
-<p id="engagement-count" class="engagement-count" aria-live="polite">47 engagements</p>
+<p id="engagement-count" class="engagement-count" aria-live="polite">74 engagements</p>
 
 <ol id="engagement-list" class="engagement-list">
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Strategic Plan for Research Activities at Centre of Excellence in AI, ML, Robotics and Automation, 27–28 October 2024, Model Engineering College, Ernakulam, Kerala.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Society of Physical Chemistry Symposium SoPhyC 2024, 22–25 October 2024, IIT Bombay, Mumbai.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Orientation Program, 17 October 2024, Government Medical College Kollam, Kerala.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Orientation programme (FOCUS 2024), 8 October 2024, School of Chemical Sciences, Kannur University, Payyanur Campus.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Current Trends in Theoretical Chemistry CTTC2024, 26–28 September 2024, Bhabha Atomic Research Centre (BARC), Mumbai.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Strategic Plan Preparation of Centre of Excellence on Emerging Materials and Infrastructure, 30–31 August 2024, Rajiv Gandhi Institute of Technology, Kottayam, Kerala.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Computational Chemistry, 14 March 2024, Department of Applied Chemistry, Cochin University of Science and Technology, Kochi, Kerala.</span></li>
-  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Python Programming, February 2024, Bharath Matha College, Ernakulam, Kerala.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>Workshop on Indigenous Software Systems for High-Performance Computing, 4 August 2026, C-DAC programme at Gokulam, Thiruvananthapuram, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>One-Day Workshop on Quantum Chemistry and Drug Design, 8 May 2026, Digital University Kerala in association with Nyro Research India, Thiruvananthapuram, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>International Faculty Development Programme on AI in Healthcare, 25 April 2026, Jyothi Engineering College, Thrissur, Kerala, online.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>Programme on Artificial Intelligence in Research and Teaching, 12 March 2026, Teaching Staff Association, Christian College, Chengannur, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>Training Programme on AI for Teaching and Research, 10 March 2026, Fatima Teachers Association, Fatima Mata National College, Kollam, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>Science Day Celebration, 10 March 2026, Research and Postgraduate Department of Chemistry, Kumbalathu Sankupillai Memorial Devaswom Board College, Sasthamcotta, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>National Science Day Programme, 27 February 2026, Corporate R&amp;D Centre, HLL Lifecare Limited, Thiruvananthapuram, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>National Research Conference and Kerala Higher Education Expo 2026, 10 February 2026, Government Women’s College, Thiruvananthapuram, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>National Conference on Artificial Intelligence in Chemical Sciences 2026 (AICS 2026), 6–7 February 2026, Department of Applied Chemistry, Cochin University of Science and Technology, Kochi, Kerala, India.</span></li>
+  <li data-year="2026"><span class="engagement-year">2026</span><span>38th Kerala Science Congress, 31 January 2026, St. Albert’s College, Ernakulam, Kerala, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>International Conference on Modeling Chemical and Biological (Re)Activity (MCBR 2025), 11–14 December 2025, International Institute of Information Technology Hyderabad, Hyderabad, Telangana, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span><a href="https://www.chem.iitb.ac.in/tcs2025/">Theoretical Chemistry Symposium 2025 (TCS 2025)</a>, 2–5 December 2025, Indian Institute of Technology Bombay, Mumbai, Maharashtra, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Rev. Dr. Mathew Thottiyil Memorial Lecture 2025, 13 November 2025, Nirmala College, Muvattupuzha, Kerala, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Discussion Meeting on Structure and Dynamics of Chemical Systems (SDCS 2025), 30 October–2 November 2025, RKN Beach Resort, Puducherry, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span><a href="https://www.sophyc.in/">Society of Physical Chemistry Symposium 2025 (SoPhyC 2025)</a>, 11–14 October 2025, Indian Institute of Technology Patna, Patna, Bihar, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Chemistry Annual Day 2025, 29 August 2025, Department of Chemistry, Birla Institute of Technology Mesra, online.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>National Conference on Recent Advances in Chemical Sciences (RACS 2025), 21–23 August 2025, School of Chemical Sciences, Mahatma Gandhi University, Kottayam, Kerala, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Refresher Course in Chemistry, 6 August 2025, UGC–Malaviya Mission Teacher Training Centre, Pondicherry University, online.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>National Seminar on Computational Science and Prof. Shridhar R. Gadre’s 75th Birthday Festschrift Symposium, 9–10 June 2025, Somaiya Vidyavihar University, Mumbai, Maharashtra, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Certificate Course in Computational Chemistry under Emerging Frontiers in Chemical Sciences, 1 May 2025, Farook College, Kozhikode, Kerala, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span><a href="https://www.apatcc11.jp/">11th Conference of the Asia-Pacific Association of Theoretical and Computational Chemists (APATCC11)</a>, 21–25 April 2025, Kobe International Conference Center, Kobe, Hyogo, Japan.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>Discussion Meeting on Machine Learning for Molecular Sciences (ML4 Science 2025), 6–8 February 2025, The Tripura Castle, Shillong, Meghalaya, India.</span></li>
+  <li data-year="2025"><span class="engagement-year">2025</span><span>International Conclave on Next-Generation Higher Education, 14–15 January 2025, Cochin University of Science and Technology, Kochi, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Modern Trends in Inorganic Chemistry 2024 (MTIC-XXI), 14–17 December 2024, Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Society of Physical Chemistry Symposium 2024 (SoPhyC 2024), 22–24 October 2024, Indian Institute of Technology Bombay, Mumbai, Maharashtra, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Orientation Programme for First MBBS Students, 17 October 2024, Government Medical College Kollam, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>FOCUS 2024 Orientation Programme, 8 October 2024, School of Chemical Sciences, Kannur University, Payyanur, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Strategic Planning for Research Activities at the Centre of Excellence in AI, ML, Robotics and Automation, 27–28 September 2024, Model Engineering College, Ernakulam, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Current Trends in Theoretical Chemistry 2024 (CTTC 2024), 26 September 2024, Bhabha Atomic Research Centre, Mumbai, Maharashtra, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Strategic Plan Preparation for the Centre of Excellence in Emerging Materials and Infrastructure, 30–31 August 2024, Rajiv Gandhi Institute of Technology, Kottayam, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Short-Term Programme on Research Methodology, 29 July 2024, UGC–Malaviya Mission Teacher Training Centre, Goa University, online.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Computational Chemistry, 14 March 2024, Department of Applied Chemistry, Cochin University of Science and Technology, Kochi, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Molecular Structure Prediction through Global Optimization and Machine Learning Techniques, 1–5 March 2024, National Institute of Technology Durgapur, Durgapur, West Bengal, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Workshop on Python Programming, February 2024, Bharata Mata College, Ernakulam, Kerala, India.</span></li>
+  <li data-year="2024"><span class="engagement-year">2024</span><span>Machine Learning for Molecular Sciences 2024 (ML4MS 2024), 1–4 February 2024, Gokulam Grand, Thiruvananthapuram, Kerala, India.</span></li>
   <li data-year="2023"><span class="engagement-year">2023</span><span>National Seminar and Discussion Meeting on Simulations in Polymers, Materials, and Biomolecules: Academia and Industry Perspectives, 22–24 June 2023, Somaiya Vidyavihar University, Mumbai.</span></li>
   <li data-year="2023"><span class="engagement-year">2023</span><span>National Seminar on Recent Advances in Chemical Sciences, 3–4 April 2023, School of Chemical Sciences, M. G. University.</span></li>
   <li data-year="2023"><span class="engagement-year">2023</span><span>International Conference on Systems and Processes in Physics, Chemistry and Biology (ICSPPCB-2023), 2–5 March 2023, Assam University, Silchar, Assam.</span></li>
