@@ -2,19 +2,19 @@
 layout: page
 title: Research
 eyebrow: Scientific agenda
-description: My research asks how computation can explore molecular and reaction space without losing chemical meaning.
+description: Our research asks how computation can explore molecular and reaction space without losing chemical meaning.
 permalink: /research/
 ---
 
-My work begins with a chemical question rather than a preferred algorithm. I use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.
+Our work begins with a chemical question rather than a preferred algorithm. We use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.
 
 ## Automated exploration
 
-Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. I am interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
+Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. We are interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
 
 ## Molecular discovery and mechanism
 
-I study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.
+We study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.
 
 ## AI for science
 

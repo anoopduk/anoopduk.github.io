@@ -2,11 +2,11 @@
 layout: page
 title: About
 eyebrow: A. Anoop
-description: I am a computational chemist interested in how we explore chemical space, build scientific tools and organise the institutions in which research and teaching happen.
+description: I am a computational chemist. We explore chemical space and build scientific tools; I also write about the institutions in which research and teaching happen.
 permalink: /about/
 ---
 
-I am a Professor in the School of Digital Sciences at [Digital University Kerala](https://duk.ac.in/). My scientific work combines computational chemistry, automated exploration and machine learning, particularly for problems where chemical structure, mechanism and discovery are tightly connected.
+I am a Professor in the School of Digital Sciences at [Digital University Kerala](https://duk.ac.in/). In our research, we combine computational chemistry, automated exploration and machine learning, particularly for problems where chemical structure, mechanism and discovery are tightly connected.
 
 Before joining Digital University Kerala, I served at the Indian Institute of Technology Kharagpur, first as Assistant Professor and later as Associate Professor. Earlier, I carried out postdoctoral research at the Max Planck Institut für Kohlenforschung and the University of Bonn. I completed my PhD at the University of Hyderabad under Professor E. D. Jemmis.
 
