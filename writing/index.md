@@ -2,7 +2,7 @@
 layout: page
 title: Writing
 eyebrow: Notes and essays
-description: Writing on computational chemistry, AI for science, research practice, education and academic institutions.
+description: Writing on computational chemistry, scientific machine learning, research practice, education and academic institutions.
 permalink: /writing/
 kind: archive
 ---

@@ -1,41 +1,22 @@
 ---
 layout: page
 title: Research
-eyebrow: Scientific agenda
-description: Our research asks how computation can explore molecular and reaction space without losing chemical meaning.
+eyebrow: Gateway to AnoopLab
+description: A concise guide to the research programme I lead at AnoopLab in computational chemistry, automated chemical exploration and molecular discovery.
 permalink: /research/
 ---
 
-Our work begins with a chemical question rather than a preferred algorithm. We use electronic-structure theory, automated exploration, data-driven models and scientific software in combinations suited to the problem.
+The research programme I guide is carried out collectively by [AnoopLab](https://anooplab.github.io/). Its detailed research pages, publications, software and records of current and former group members therefore belong on the lab website.
 
-## Automated exploration
+Our work begins with chemical questions raised by reactions, structures and measurable properties. Attempts to understand individual experiments gradually led the group towards methods that can explore more broadly: automated reaction discovery, systematic structure search, functional molecular design and carefully validated uses of machine learning.
 
-Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. We are interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
+The [AnoopLab research hub](https://anooplab.github.io/research/) brings these connected directions together:
 
-[Explore PyAR, our programme for automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
+- [PyAR and automated exploration](https://anooplab.github.io/research/pyar/)
+- [Reaction discovery, astrochemistry and prebiotic chemical space](https://anooplab.github.io/research/reaction-discovery/)
+- [Molecular aggregates, nanoclusters and nanoalloys](https://anooplab.github.io/research/clusters/)
+- [Molecular discovery and functional materials](https://anooplab.github.io/research/functional-materials/)
 
-## Molecular aggregates, nanoclusters and nanoalloys
+The separate account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental and theoretical collaborations shaped this programme. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
 
-Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.
-
-[Explore molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
-
-## Astrochemical and prebiotic space
-
-Some problems begin by asking which molecules are possible; others ask how those molecules form. HydroMol maps a defined space of small hydrocarbons, while our automated reaction studies explore networks involving HCN, HNC, ammonia, formaldehyde and related species. Astrochemistry and prebiotic chemistry provide demanding tests of both approaches.
-
-[Explore automated reaction discovery and astrochemical space →]({{ '/research/reaction-discovery/' | relative_url }})
-
-## Molecular discovery and functional materials
-
-We combine molecular generation, quantum chemistry and machine learning to move from large candidate spaces towards molecules selected for particular functions. Current applications include strained hydrocarbons for energy storage, TADF emitters for OLEDs, photocages, photoswitches and photosensitisers.
-
-[Explore molecular discovery and functional materials →]({{ '/research/functional-materials/' | relative_url }})
-
-## AI for science
-
-Machine learning is valuable when it helps us ask better scientific questions, explore otherwise inaccessible spaces or identify relationships that can be tested chemically. Prediction alone is not enough. The model, data and explanation must be examined together, with uncertainty and domain limits made explicit.
-
-## Group research
-
-Detailed projects, publications, software and current group members belong on the [AnoopLab website](https://anooplab.github.io/). The independent page on [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental questions and shared investigations shaped these research directions. Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
+This personal site remains a gateway to that collective work and a home for my biography, teaching, writing and professional engagements.

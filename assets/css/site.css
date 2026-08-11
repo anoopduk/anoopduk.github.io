@@ -1,4 +1,23 @@
 :root {
+  color-scheme: light;
+  --bg: #f7f5ef;
+  --surface: #eeebe2;
+  --surface-2: #e5e0d5;
+  --text: #17211e;
+  --muted: #53615a;
+  --faint: #78857e;
+  --line: #c9c3b6;
+  --accent: #356f66;
+  --accent-strong: #24554e;
+  --max: 76rem;
+  --narrow: 47rem;
+  --sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+html[data-theme="dark"] {
   color-scheme: dark;
   --bg: #101715;
   --surface: #17211e;
@@ -9,12 +28,21 @@
   --line: #304039;
   --accent: #8fc8bd;
   --accent-strong: #b5ddd5;
-  --max: 76rem;
-  --narrow: 47rem;
-  --sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #101715;
+    --surface: #17211e;
+    --surface-2: #1d2a26;
+    --text: #e8eeea;
+    --muted: #a6b3ac;
+    --faint: #74847b;
+    --line: #304039;
+    --accent: #8fc8bd;
+    --accent-strong: #b5ddd5;
+  }
 }
 
 * {
@@ -160,6 +188,30 @@ h3 {
 .primary-nav a[aria-current="page"] {
   color: var(--text);
 }
+
+.theme-toggle {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 0.15rem;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover { color: var(--text); border-color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 0.2rem; }
+
+.redirect-page { padding-block: clamp(4rem, 12vw, 8rem); }
+.redirect-page h1 { max-width: 14ch; font-size: clamp(2.6rem, 8vw, 5rem); }
 
 .hero {
   display: grid;
@@ -464,6 +516,17 @@ h3 {
   .primary-nav {
     width: 100%;
     gap: 0.7rem 1rem;
+  }
+  .theme-toggle-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .hero {
     padding-block: 3.25rem;

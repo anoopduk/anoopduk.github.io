@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <meta name="theme-color" content="#f7f5ef" data-light="#f7f5ef" data-dark="#101715" />
+    <title>{{ page.title }} has moved | A. Anoop</title>
+    <link rel="canonical" href="{{ page.redirect_to }}" />
+    <meta http-equiv="refresh" content="0; url={{ page.redirect_to }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+    <script>window.location.replace({{ page.redirect_to | jsonify }});</script>
+  </head>
+  <body>
+    <main class="page redirect-page">
+      <p class="eyebrow">Research now belongs to AnoopLab</p>
+      <h1>{{ page.title }} has moved.</h1>
+      <p>The group research page is now maintained at <a href="{{ page.redirect_to }}">{{ page.redirect_to }}</a>.</p>
+    </main>
+  </body>
+</html>

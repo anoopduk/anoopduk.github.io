@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#101715" />
+<meta name="theme-color" content="#f7f5ef" data-light="#f7f5ef" data-dark="#101715" />
 <meta
   name="robots"
   content="{{ page.robots | default: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }}"
@@ -13,7 +13,11 @@
   title="Writing by A. Anoop"
   href="{{ '/feed.xml' | absolute_url }}"
 />
+<script>
+  (() => { try { const theme = localStorage.getItem('anoop-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch (_) {} })();
+</script>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+<script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
 {% if page.layout == 'post' %}
   <link rel="stylesheet" href="{{ '/assets/css/writing.css' | relative_url }}" />
 {% endif %}
@@ -33,7 +37,7 @@
     ],
     "url": "{{ '/' | absolute_url }}",
     "mainEntityOfPage": "{{ '/about/' | absolute_url }}",
-    "description": "Professor and computational chemist working on automated chemical exploration, molecular discovery and AI for science.",
+    "description": "Professor and computational chemist working on automated chemical exploration, molecular discovery and scientific machine learning.",
     "image": {
       "@type": "ImageObject",
       "url": "{{ '/anoop.png' | absolute_url }}",
@@ -64,8 +68,7 @@
       "Metal nanoclusters",
       "Nanoalloys",
       "Scientific machine learning",
-      "Explainable artificial intelligence for molecular science",
-      "AI for science",
+      "Interpretable machine learning for molecular science",
       "Scientific software"
     ],
     "sameAs": [
@@ -95,131 +98,6 @@
     "mainEntity": {
       "@id": "{{ '/#person' | absolute_url }}"
     }
-  }
-</script>
-{% endif %}
-{% if page.research_theme == 'pyar' %}
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "@id": "{{ '/research/pyar/#software' | absolute_url }}",
-    "name": "PyAR",
-    "alternateName": "Python program for aggregation and reaction",
-    "description": {{ page.description | jsonify }},
-    "url": "{{ page.url | absolute_url }}",
-    "codeRepository": "https://github.com/anooplab/pyar",
-    "sameAs": "https://pyar.readthedocs.io/en/latest/",
-    "programmingLanguage": "Python",
-    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "applicationCategory": "Computational chemistry",
-    "citation": [
-      "https://doi.org/10.1016/j.comptc.2017.03.040",
-      "https://doi.org/10.3389/fchem.2019.00644",
-      "https://doi.org/10.1002/chem.201705492",
-      "https://doi.org/10.1021/acs.jpca.2c03762",
-      "https://doi.org/10.1021/acsearthspacechem.3c00321",
-      "https://doi.org/10.1002/jcc.70287",
-      "https://doi.org/10.1039/D5CP03273C"
-    ]
-  }
-</script>
-{% endif %}
-{% if page.research_theme == 'clusters' %}
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "{{ '/research/clusters/#page' | absolute_url }}",
-    "url": "{{ page.url | absolute_url }}",
-    "name": {{ page.title | jsonify }},
-    "description": {{ page.description | jsonify }},
-    "author": {
-      "@id": "{{ '/#person' | absolute_url }}"
-    },
-    "about": [
-      {"@type": "Thing", "name": "Molecular clusters"},
-      {"@type": "Thing", "name": "Metal nanoclusters"},
-      {"@type": "Thing", "name": "Nanoalloys"},
-      {"@type": "Thing", "name": "Global optimisation"},
-      {"@type": "Thing", "name": "Computational catalysis"}
-    ],
-    "citation": [
-      "https://doi.org/10.1016/j.comptc.2017.03.040",
-      "https://doi.org/10.3389/fchem.2019.00644",
-      "https://doi.org/10.3390/atoms9040089",
-      "https://doi.org/10.1002/jcc.26725",
-      "https://doi.org/10.1021/acs.jpca.1c09981",
-      "https://doi.org/10.1039/D2CP05833B",
-      "https://doi.org/10.1021/acs.jpca.2c07561",
-      "https://doi.org/10.1016/j.poly.2025.117703",
-      "https://doi.org/10.1039/D5CP03587B",
-      "https://doi.org/10.1002/jcc.70287",
-      "https://doi.org/10.1039/D5CP03273C"
-    ]
-  }
-</script>
-{% endif %}
-{% if page.research_theme == 'reaction-discovery' %}
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "{{ '/research/reaction-discovery/#page' | absolute_url }}",
-    "url": "{{ page.url | absolute_url }}",
-    "name": {{ page.title | jsonify }},
-    "description": {{ page.description | jsonify }},
-    "author": {
-      "@id": "{{ '/#person' | absolute_url }}"
-    },
-    "about": [
-      {"@type": "Thing", "name": "Automated reaction discovery"},
-      {"@type": "Thing", "name": "Chemical reaction space"},
-      {"@type": "Thing", "name": "Astrochemistry"},
-      {"@type": "Thing", "name": "Hydrocarbon chemical space"},
-      {"@type": "Thing", "name": "Prebiotic chemistry"},
-      {"@type": "Thing", "name": "Hydrogen cyanide chemistry"}
-    ],
-    "citation": [
-      "https://doi.org/10.1002/jcc.70236",
-      "https://doi.org/10.1002/anie.201303246",
-      "https://doi.org/10.1002/chem.201705492",
-      "https://doi.org/10.1021/acsearthspacechem.3c00113",
-      "https://doi.org/10.1021/acsearthspacechem.3c00321",
-      "https://doi.org/10.26434/chemrxiv-2024-c5mzp"
-    ]
-  }
-</script>
-{% endif %}
-{% if page.research_theme == 'functional-materials' %}
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "{{ '/research/functional-materials/#page' | absolute_url }}",
-    "url": "{{ page.url | absolute_url }}",
-    "name": {{ page.title | jsonify }},
-    "description": {{ page.description | jsonify }},
-    "author": {
-      "@id": "{{ '/#person' | absolute_url }}"
-    },
-    "about": [
-      {"@type": "Thing", "name": "Molecular discovery"},
-      {"@type": "Thing", "name": "Functional materials"},
-      {"@type": "Thing", "name": "Thermally activated delayed fluorescence"},
-      {"@type": "Thing", "name": "Organic light-emitting diodes"},
-      {"@type": "Thing", "name": "High-energy-density fuels"},
-      {"@type": "Thing", "name": "Photoswitches and photosensitisers"}
-    ],
-    "citation": [
-      "https://doi.org/10.1039/D6SE00364H",
-      "https://doi.org/10.1002/chem.202304206",
-      "https://doi.org/10.1039/D6TC00707D",
-      "https://doi.org/10.1039/D5SC04370K",
-      "https://doi.org/10.1039/D1CC06950K",
-      "https://doi.org/10.1016/j.jphotochem.2023.115408",
-      "https://doi.org/10.1002/asia.202401325"
-    ]
   }
 </script>
 {% endif %}
