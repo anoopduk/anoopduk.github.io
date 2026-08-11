@@ -12,6 +12,8 @@ Our work begins with a chemical question rather than a preferred algorithm. We u
 
 Chemical discovery is often limited by the structures and mechanisms a researcher thinks to test. We are interested in computational strategies that search more broadly: generating molecular structures, navigating reaction pathways and identifying chemically meaningful regions of large search spaces.
 
+[Explore PyAR, our programme for automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
+
 ## Molecular discovery and mechanism
 
 We study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.

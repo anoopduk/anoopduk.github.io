@@ -92,3 +92,30 @@
   }
 </script>
 {% endif %}
+{% if page.research_theme == 'pyar' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "@id": "{{ '/research/pyar/#software' | absolute_url }}",
+    "name": "PyAR",
+    "alternateName": "Python program for aggregation and reaction",
+    "description": {{ page.description | jsonify }},
+    "url": "{{ page.url | absolute_url }}",
+    "codeRepository": "https://github.com/anooplab/pyar",
+    "sameAs": "https://pyar.readthedocs.io/en/latest/",
+    "programmingLanguage": "Python",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "applicationCategory": "Computational chemistry",
+    "citation": [
+      "https://doi.org/10.1016/j.comptc.2017.03.040",
+      "https://doi.org/10.3389/fchem.2019.00644",
+      "https://doi.org/10.1002/chem.201705492",
+      "https://doi.org/10.1021/acs.jpca.2c03762",
+      "https://doi.org/10.1021/acsearthspacechem.3c00321",
+      "https://doi.org/10.1002/jcc.70287",
+      "https://doi.org/10.1039/D5CP03273C"
+    ]
+  }
+</script>
+{% endif %}
