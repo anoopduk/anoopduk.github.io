@@ -14,6 +14,12 @@ Chemical discovery is often limited by the structures and mechanisms a researche
 
 [Explore PyAR, our programme for automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
 
+## Molecular aggregates, nanoclusters and nanoalloys
+
+Atoms and molecules can assemble into many competing structures whose stability and properties depend on size, composition, bonding and collective interactions. We use automated cluster building, quantum chemistry and machine-learned potentials to explore these landscapes—from hydrogen-bonded molecular aggregates to metallic clusters and multicomponent nanoalloys.
+
+[Explore molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
+
 ## Reaction discovery and prebiotic chemical space
 
 Automated searches become scientifically useful when candidate products are followed by mechanistic verification and environmental constraints. We apply this approach to HCN, HNC, ammonia, formaldehyde and related species, using prebiotic chemistry as a demanding test of reaction-space exploration.

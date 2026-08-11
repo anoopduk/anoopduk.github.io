@@ -57,6 +57,9 @@
       "Automated chemical exploration",
       "Reaction discovery",
       "Molecular structure prediction",
+      "Molecular aggregates",
+      "Metal nanoclusters",
+      "Nanoalloys",
       "Scientific machine learning",
       "Explainable artificial intelligence for molecular science",
       "AI for science",
@@ -113,6 +116,41 @@
       "https://doi.org/10.1002/chem.201705492",
       "https://doi.org/10.1021/acs.jpca.2c03762",
       "https://doi.org/10.1021/acsearthspacechem.3c00321",
+      "https://doi.org/10.1002/jcc.70287",
+      "https://doi.org/10.1039/D5CP03273C"
+    ]
+  }
+</script>
+{% endif %}
+{% if page.research_theme == 'clusters' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "{{ '/research/clusters/#page' | absolute_url }}",
+    "url": "{{ page.url | absolute_url }}",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "author": {
+      "@id": "{{ '/#person' | absolute_url }}"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Molecular clusters"},
+      {"@type": "Thing", "name": "Metal nanoclusters"},
+      {"@type": "Thing", "name": "Nanoalloys"},
+      {"@type": "Thing", "name": "Global optimisation"},
+      {"@type": "Thing", "name": "Computational catalysis"}
+    ],
+    "citation": [
+      "https://doi.org/10.1016/j.comptc.2017.03.040",
+      "https://doi.org/10.3389/fchem.2019.00644",
+      "https://doi.org/10.3390/atoms9040089",
+      "https://doi.org/10.1002/jcc.26725",
+      "https://doi.org/10.1021/acs.jpca.1c09981",
+      "https://doi.org/10.1039/D2CP05833B",
+      "https://doi.org/10.1021/acs.jpca.2c07561",
+      "https://doi.org/10.1016/j.poly.2025.117703",
+      "https://doi.org/10.1039/D5CP03587B",
       "https://doi.org/10.1002/jcc.70287",
       "https://doi.org/10.1039/D5CP03273C"
     ]
