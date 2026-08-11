@@ -119,3 +119,31 @@
   }
 </script>
 {% endif %}
+{% if page.research_theme == 'reaction-discovery' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "{{ '/research/reaction-discovery/#page' | absolute_url }}",
+    "url": "{{ page.url | absolute_url }}",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "author": {
+      "@id": "{{ '/#person' | absolute_url }}"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Automated reaction discovery"},
+      {"@type": "Thing", "name": "Chemical reaction space"},
+      {"@type": "Thing", "name": "Prebiotic chemistry"},
+      {"@type": "Thing", "name": "Hydrogen cyanide chemistry"}
+    ],
+    "citation": [
+      "https://doi.org/10.1002/anie.201303246",
+      "https://doi.org/10.1002/chem.201705492",
+      "https://doi.org/10.1021/acsearthspacechem.3c00113",
+      "https://doi.org/10.1021/acsearthspacechem.3c00321",
+      "https://doi.org/10.26434/chemrxiv-2024-c5mzp"
+    ]
+  }
+</script>
+{% endif %}

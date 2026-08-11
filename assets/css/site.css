@@ -287,6 +287,12 @@ h3 {
   color: var(--muted);
 }
 
+.focus-links {
+  display: flex;
+  gap: 0.55rem 1rem;
+  flex-wrap: wrap;
+}
+
 .link-panel h3 a {
   color: var(--text);
 }
