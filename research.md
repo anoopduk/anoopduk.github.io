@@ -1,22 +1,29 @@
 ---
 layout: page
 title: Research
-eyebrow: Gateway to AnoopLab
-description: A concise guide to the research programme I lead at AnoopLab in computational chemistry, automated chemical exploration and molecular discovery.
+eyebrow: Research at AnoopLab
+description: A personal gateway to the AnoopLab programme in automated chemical exploration and scientific machine learning for molecular discovery.
 permalink: /research/
 ---
 
-The research programme I guide is carried out collectively by [AnoopLab](https://anooplab.github.io/). Its detailed research pages, publications, software and records of current and former group members therefore belong on the lab website.
+The research programme I guide is carried out collectively by [AnoopLab](https://anooplab.github.io/). The lab website is therefore the authoritative record of the programme, its projects, publications, software and people.
 
-Our work begins with chemical questions raised by reactions, structures and measurable properties. Attempts to understand individual experiments gradually led the group towards methods that can explore more broadly: automated reaction discovery, systematic structure search, functional molecular design and carefully validated uses of machine learning.
+It has two connected directions.
 
-The [AnoopLab research hub](https://anooplab.github.io/research/) brings these connected directions together:
+## Automated chemical exploration
 
-- [PyAR and automated exploration](https://anooplab.github.io/research/pyar/)
-- [Reaction discovery, astrochemistry and prebiotic chemical space](https://anooplab.github.io/research/reaction-discovery/)
-- [Molecular aggregates, nanoclusters and nanoalloys](https://anooplab.github.io/research/clusters/)
-- [Molecular discovery and functional materials](https://anooplab.github.io/research/functional-materials/)
+We develop software and search strategies that generate molecular structures, navigate reaction pathways and explore complex chemical spaces with less manual bias. [PyAR](https://anooplab.github.io/research/pyar/) is the principal software programme supporting this work.
 
-The separate account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental and theoretical collaborations shaped this programme. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
+## Scientific machine learning
+
+We use machine learning to accelerate energy models, guide molecular search and identify interpretable structure–property relationships. Chemical grounding, validation, uncertainty and domain limits matter more than benchmark performance alone.
+
+The directions are not independent: automated exploration produces structures, reactions and data; scientific machine learning helps rank, accelerate and interpret them; quantum chemistry and chemical reasoning test the results.
+
+Current applications include [reaction discovery, astrochemistry and prebiotic chemical space](https://anooplab.github.io/research/reaction-discovery/), [molecular aggregates, nanoclusters and nanoalloys](https://anooplab.github.io/research/clusters/), and [molecular discovery and functional materials](https://anooplab.github.io/research/functional-materials/).
+
+[Read the full AnoopLab research programme →](https://anooplab.github.io/research/)
+
+The account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental and theoretical collaborations shaped the programme. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
 
 This personal site remains a gateway to that collective work and a home for my biography, teaching, writing and professional engagements.
