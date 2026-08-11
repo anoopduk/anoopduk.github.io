@@ -57,6 +57,9 @@
       "Automated chemical exploration",
       "Reaction discovery",
       "Molecular structure prediction",
+      "Molecular discovery",
+      "Functional molecular materials",
+      "Thermally activated delayed fluorescence",
       "Molecular aggregates",
       "Metal nanoclusters",
       "Nanoalloys",
@@ -172,15 +175,50 @@
     "about": [
       {"@type": "Thing", "name": "Automated reaction discovery"},
       {"@type": "Thing", "name": "Chemical reaction space"},
+      {"@type": "Thing", "name": "Astrochemistry"},
+      {"@type": "Thing", "name": "Hydrocarbon chemical space"},
       {"@type": "Thing", "name": "Prebiotic chemistry"},
       {"@type": "Thing", "name": "Hydrogen cyanide chemistry"}
     ],
     "citation": [
+      "https://doi.org/10.1002/jcc.70236",
       "https://doi.org/10.1002/anie.201303246",
       "https://doi.org/10.1002/chem.201705492",
       "https://doi.org/10.1021/acsearthspacechem.3c00113",
       "https://doi.org/10.1021/acsearthspacechem.3c00321",
       "https://doi.org/10.26434/chemrxiv-2024-c5mzp"
+    ]
+  }
+</script>
+{% endif %}
+{% if page.research_theme == 'functional-materials' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "{{ '/research/functional-materials/#page' | absolute_url }}",
+    "url": "{{ page.url | absolute_url }}",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "author": {
+      "@id": "{{ '/#person' | absolute_url }}"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Molecular discovery"},
+      {"@type": "Thing", "name": "Functional materials"},
+      {"@type": "Thing", "name": "Thermally activated delayed fluorescence"},
+      {"@type": "Thing", "name": "Organic light-emitting diodes"},
+      {"@type": "Thing", "name": "High-energy-density fuels"},
+      {"@type": "Thing", "name": "Photoswitches and photosensitisers"}
+    ],
+    "citation": [
+      "https://doi.org/10.1039/D6SE00364H",
+      "https://doi.org/10.1002/chem.202304206",
+      "https://doi.org/10.1039/D6TC00707D",
+      "https://doi.org/10.1039/D5SC04370K",
+      "https://doi.org/10.1039/D1CC06950K",
+      "https://doi.org/10.1016/j.jphotochem.2023.115408",
+      "https://doi.org/10.1002/asia.202401325"
     ]
   }
 </script>

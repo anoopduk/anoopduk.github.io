@@ -157,4 +157,4 @@ The objective is not merely to produce larger collections of cluster geometries.
 
 ## Connected research
 
-[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Automated reaction discovery]({{ '/research/reaction-discovery/' | relative_url }}) · [Read the PyAR documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
+[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Automated reaction discovery]({{ '/research/reaction-discovery/' | relative_url }}) · [Explore functional molecular discovery]({{ '/research/functional-materials/' | relative_url }}) · [Read the PyAR documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)

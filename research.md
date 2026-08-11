@@ -26,9 +26,11 @@ Some problems begin by asking which molecules are possible; others ask how those
 
 [Explore automated reaction discovery and astrochemical space →]({{ '/research/reaction-discovery/' | relative_url }})
 
-## Molecular discovery and mechanism
+## Molecular discovery and functional materials
 
-We study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.
+We combine molecular generation, quantum chemistry and machine learning to move from large candidate spaces towards molecules selected for particular functions. Current applications include strained hydrocarbons for energy storage, TADF emitters for OLEDs, photocages, photoswitches and photosensitisers.
+
+[Explore molecular discovery and functional materials →]({{ '/research/functional-materials/' | relative_url }})
 
 ## AI for science
 

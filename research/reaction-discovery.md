@@ -130,4 +130,4 @@ The objective is not simply to generate more molecules. It is to determine which
 
 ## Connected research
 
-[Explore HydroMol](https://hydromol.github.io/) · [Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore molecular aggregates and nanoclusters]({{ '/research/clusters/' | relative_url }}) · [Read the PyAR documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the PyAR source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
+[Explore HydroMol](https://hydromol.github.io/) · [Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore molecular aggregates and nanoclusters]({{ '/research/clusters/' | relative_url }}) · [Explore functional molecular discovery]({{ '/research/functional-materials/' | relative_url }}) · [Read the PyAR documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the PyAR source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
