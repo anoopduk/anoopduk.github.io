@@ -115,4 +115,4 @@ The objective is not simply to generate more molecules. It is to determine which
 
 ## Connected research
 
-[Explore PyAR](https://anoopduk.github.io/research/pyar/) · [Read the documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the source code](https://github.com/anooplab/pyar) · [Return to the research overview](/research/) · [Visit AnoopLab](https://anooplab.github.io/)
+[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore molecular aggregates and nanoclusters]({{ '/research/clusters/' | relative_url }}) · [Read the documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)

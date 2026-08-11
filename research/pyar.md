@@ -36,6 +36,8 @@ The search can be coupled to methods ranging from xTB and machine-learned potent
 
 The original PyAR strategy combined orientation sampling, local optimisation and a Tabu list that discourages repeated exploration of similar structures. Recursive fragment addition has been used to study molecular aggregates, homometallic clusters, binary nanoalloys and ternary clusters.
 
+[Explore our research on molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
+
 ### Automated reaction discovery
 
 Alternative reactant orientations and AFIR-style biased optimisation provide starting points for discovering products, intermediates and competing reaction channels. We have used this approach to investigate prebiotic networks involving HCN, NH₃ and related species—systems in which even small reactants generate a large and unintuitive chemical space.
@@ -98,4 +100,4 @@ PyAR remains both research software and an evolving scientific programme. Contri
 
 Researchers interested in using or extending PyAR can begin with the [documentation](https://pyar.readthedocs.io/en/latest/) or participate through the [GitHub repository](https://github.com/anooplab/pyar).
 
-[Explore prebiotic reaction discovery]({{ '/research/reaction-discovery/' | relative_url }}) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/) · [Browse our software](https://github.com/anooplab)
+[Explore clusters and nanoalloys]({{ '/research/clusters/' | relative_url }}) · [Explore prebiotic reaction discovery]({{ '/research/reaction-discovery/' | relative_url }}) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/) · [Browse our software](https://github.com/anooplab)
