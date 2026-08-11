@@ -5,13 +5,30 @@ description: >-
 url: https://anoopduk.github.io
 baseurl: ""
 lang: en-GB
+locale: en_GB
 timezone: Asia/Kolkata
 
 author:
   name: A. Anoop
   url: https://anoopduk.github.io/about/
+  twitter: A_Anoop_A
 
-logo: /anoop.png
+twitter:
+  username: A_Anoop_A
+  card: summary
+
+social:
+  name: A. Anoop
+  links:
+    - https://orcid.org/0000-0002-8116-5506
+    - https://scholar.google.com/citations?user=QgKaomgAAAAJ
+    - https://www.scopus.com/authid/detail.uri?authorId=6508191130
+    - https://www.researchgate.net/profile/Anakuthil_Anoop/publications
+    - https://github.com/anooplab
+    - https://www.linkedin.com/in/anoop-a-9286125/
+    - https://x.com/A_Anoop_A
+    - https://www.instagram.com/a_anoop_a/
+    - https://www.facebook.com/profile.php?id=61555278326807
 
 plugins:
   - jekyll-seo-tag
@@ -19,10 +36,20 @@ plugins:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      image:
+        path: /anoop.png
+        width: 1200
+        height: 1200
+        alt: Portrait of A. Anoop
+  - scope:
       path: "writing"
     values:
       layout: post
       kind: article
+      seo:
+        type: BlogPosting
 
 exclude:
   - README.md
