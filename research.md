@@ -14,6 +14,12 @@ Chemical discovery is often limited by the structures and mechanisms a researche
 
 [Explore PyAR, our programme for automated structure and reaction search →]({{ '/research/pyar/' | relative_url }})
 
+## Reaction discovery and prebiotic chemical space
+
+Automated searches become scientifically useful when candidate products are followed by mechanistic verification and environmental constraints. We apply this approach to HCN, HNC, ammonia, formaldehyde and related species, using prebiotic chemistry as a demanding test of reaction-space exploration.
+
+[Explore automated reaction discovery and prebiotic chemical space →]({{ '/research/reaction-discovery/' | relative_url }})
+
 ## Molecular discovery and mechanism
 
 We study relationships between molecular structure, stability, reactivity and function. This includes mechanistic problems in catalysis and photochemistry as well as the exploration of unusual or strained molecular systems.
