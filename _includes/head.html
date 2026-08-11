@@ -1,6 +1,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#101715" />
+<meta
+  name="robots"
+  content="{{ page.robots | default: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }}"
+/>
 {% seo %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any" />
 <link
@@ -20,6 +24,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "{{ '/#person' | absolute_url }}",
     "name": "A. Anoop",
     "alternateName": [
       "Anoop Ayyappan",
@@ -27,22 +32,63 @@
       "Anakuthil Anoop Ayyappan"
     ],
     "url": "{{ '/' | absolute_url }}",
-    "image": "{{ '/anoop.png' | absolute_url }}",
+    "mainEntityOfPage": "{{ '/about/' | absolute_url }}",
+    "description": "Professor and computational chemist working on automated chemical exploration, molecular discovery and AI for science.",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ '/anoop.png' | absolute_url }}",
+      "width": 1200,
+      "height": 1200
+    },
     "jobTitle": "Professor",
-    "affiliation": {
+    "worksFor": {
       "@type": "CollegeOrUniversity",
       "name": "Digital University Kerala",
       "url": "https://duk.ac.in/"
     },
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ORCID",
+      "value": "0000-0002-8116-5506",
+      "url": "https://orcid.org/0000-0002-8116-5506"
+    },
+    "knowsAbout": [
+      "Computational chemistry",
+      "Automated chemical exploration",
+      "Reaction discovery",
+      "Molecular structure prediction",
+      "Scientific machine learning",
+      "Explainable artificial intelligence for molecular science",
+      "AI for science",
+      "Scientific software"
+    ],
     "sameAs": [
+      "{{ site.data.profile.official_profile }}",
       "https://anooplab.github.io/",
       "https://github.com/anooplab",
       "https://scholar.google.com/citations?user=QgKaomgAAAAJ",
       "https://orcid.org/0000-0002-8116-5506",
+      "https://www.scopus.com/authid/detail.uri?authorId=6508191130",
       "https://www.researchgate.net/profile/Anakuthil_Anoop/publications",
       "https://www.linkedin.com/in/anoop-a-9286125/",
       "https://x.com/A_Anoop_A",
-      "https://www.instagram.com/a_anoop_a/"
+      "https://www.instagram.com/a_anoop_a/",
+      "https://www.facebook.com/profile.php?id=61555278326807"
     ]
   }
 </script>
+{% if page.url == '/about/' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "{{ '/about/#profile' | absolute_url }}",
+    "url": "{{ '/about/' | absolute_url }}",
+    "name": "About A. Anoop",
+    "description": {{ page.description | jsonify }},
+    "mainEntity": {
+      "@id": "{{ '/#person' | absolute_url }}"
+    }
+  }
+</script>
+{% endif %}
