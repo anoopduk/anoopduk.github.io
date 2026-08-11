@@ -141,4 +141,4 @@ The objective is not autonomous generation for its own sake. It is a chemically 
 
 ## Connected research
 
-[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore astrochemical and reaction space]({{ '/research/reaction-discovery/' | relative_url }}) · [Explore molecular aggregates, nanoclusters and nanoalloys]({{ '/research/clusters/' | relative_url }}) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
+[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore astrochemical and reaction space]({{ '/research/reaction-discovery/' | relative_url }}) · [Explore molecular aggregates, nanoclusters and nanoalloys]({{ '/research/clusters/' | relative_url }}) · [How collaborations shaped the programme](https://anooplab.github.io/research/collaborations/) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)

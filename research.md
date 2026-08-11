@@ -38,4 +38,4 @@ Machine learning is valuable when it helps us ask better scientific questions, e
 
 ## Group research
 
-Detailed projects, publications, software and current group members belong on the [AnoopLab website](https://anooplab.github.io/). Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
+Detailed projects, publications, software and current group members belong on the [AnoopLab website](https://anooplab.github.io/). The independent page on [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental questions and shared investigations shaped these research directions. Open-source software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
