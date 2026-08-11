@@ -27,14 +27,21 @@ description: Professor and computational chemist working on automated chemical e
     </div>
   </div>
   <figure class="portrait">
-    <img
-      src="{{ '/anoop.png' | relative_url }}"
-      alt="Portrait of A. Anoop"
-      width="640"
-      height="800"
-      decoding="async"
-      fetchpriority="high"
-    />
+    <picture>
+      <source
+        type="image/webp"
+        srcset="{{ '/images/anoop-560.webp' | relative_url }} 560w, {{ '/images/anoop-1120.webp' | relative_url }} 1120w"
+        sizes="(max-width: 832px) calc(100vw - 24px), 384px"
+      />
+      <img
+        src="{{ '/anoop.png' | relative_url }}"
+        alt="Portrait of A. Anoop"
+        width="1120"
+        height="1400"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </picture>
     <figcaption>
       Professor, School of Digital Sciences, Digital University Kerala
     </figcaption>

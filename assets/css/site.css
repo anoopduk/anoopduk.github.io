@@ -37,6 +37,13 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
+}
+
+p,
+li,
+a {
+  overflow-wrap: break-word;
 }
 
 a {
@@ -206,12 +213,18 @@ h3 {
 }
 
 .portrait {
+  width: 100%;
   margin: 0;
+}
+
+.portrait picture {
+  display: block;
 }
 
 .portrait img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
@@ -407,7 +420,8 @@ h3 {
     grid-template-columns: 1fr;
   }
   .portrait {
-    max-width: 24rem;
+    width: min(100%, 24rem);
+    justify-self: center;
   }
   .section-heading {
     grid-template-columns: 1fr;
@@ -442,7 +456,11 @@ h3 {
     width: min(calc(100% - 1.5rem), var(--max));
   }
   .primary-nav {
+    width: 100%;
     gap: 0.7rem 1rem;
+  }
+  .hero {
+    padding-block: 3.25rem;
   }
   .writing-list li {
     grid-template-columns: 1fr;
