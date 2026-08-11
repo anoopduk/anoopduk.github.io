@@ -20,11 +20,11 @@ Atoms and molecules can assemble into many competing structures whose stability 
 
 [Explore molecular aggregates, nanoclusters and nanoalloys →]({{ '/research/clusters/' | relative_url }})
 
-## Reaction discovery and prebiotic chemical space
+## Astrochemical and prebiotic space
 
-Automated searches become scientifically useful when candidate products are followed by mechanistic verification and environmental constraints. We apply this approach to HCN, HNC, ammonia, formaldehyde and related species, using prebiotic chemistry as a demanding test of reaction-space exploration.
+Some problems begin by asking which molecules are possible; others ask how those molecules form. HydroMol maps a defined space of small hydrocarbons, while our automated reaction studies explore networks involving HCN, HNC, ammonia, formaldehyde and related species. Astrochemistry and prebiotic chemistry provide demanding tests of both approaches.
 
-[Explore automated reaction discovery and prebiotic chemical space →]({{ '/research/reaction-discovery/' | relative_url }})
+[Explore automated reaction discovery and astrochemical space →]({{ '/research/reaction-discovery/' | relative_url }})
 
 ## Molecular discovery and mechanism
 

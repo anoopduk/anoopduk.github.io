@@ -1,17 +1,19 @@
 ---
 layout: page
-title: "Automated reaction discovery and prebiotic chemical space"
-eyebrow: Research theme · Reaction discovery
-description: We use automated reaction search and quantum chemistry to explore chemical reaction space and develop testable hypotheses in prebiotic chemistry.
+title: "Automated reaction discovery and astrochemical space"
+eyebrow: Research theme · Astrochemistry and reaction discovery
+description: We explore molecular chemical space and reaction pathways to develop testable hypotheses in astrochemistry and prebiotic chemistry.
 permalink: /research/reaction-discovery/
 research_theme: reaction-discovery
 ---
 
-Reaction mechanisms are often investigated by proposing a likely product or intermediate and then calculating a pathway to it. This is useful, but the search remains limited by what the researcher thought to draw.
+Astrochemical exploration begins with two related questions: which molecules may be possible within a chosen composition, and how might those molecules form under a particular environment?
 
-Our work asks a broader question: **given a set of starting molecules, what products and pathways become visible when their possible encounters are explored systematically?**
+Reaction mechanisms are often investigated by proposing a likely product or intermediate and then calculating a pathway to it. This is useful, but the search remains limited by what the researcher thought to draw. A molecular inventory assembled only from known compounds creates a similar limitation.
 
-We use automated reaction search, electronic-structure calculations and molecular representations to generate candidate products, identify distinct structures and examine the pathways connecting them. Prebiotic chemistry is a demanding application of this approach: chemically simple starting materials can produce unexpectedly large networks, while the conditions under which the chemistry might occur remain uncertain.
+Our work therefore asks a broader question: **given a collection of atoms or starting molecules, what structures, products and pathways become visible when the corresponding chemical space is explored systematically?**
+
+We use stochastic molecular generation, automated reaction search, electronic-structure calculations and molecular representations to identify candidate structures and examine the pathways connecting them. Astrochemistry and prebiotic chemistry are demanding applications: chemically simple species can generate unexpectedly large spaces, while the environments in which the chemistry occurs remain difficult to reproduce and constrain.
 
 ## Chemical space and reaction space
 
@@ -28,7 +30,17 @@ Reaction space adds the transformations connecting those structures. It includes
 
 In short, **chemical space asks what molecules are possible; reaction space asks how they may be connected and at what energetic cost.**
 
-No finite calculation can enumerate all possible chemistry. Our purpose is to sample reaction space more broadly and reproducibly, reducing dependence on a single mechanism chosen in advance.
+No finite calculation can enumerate all possible chemistry. Our purpose is to sample chemical and reaction spaces more broadly and reproducibly, reducing dependence on a molecular inventory or mechanism chosen in advance.
+
+## HydroMol: mapping small hydrocarbon space
+
+Small hydrocarbons are abundant and reactive in interstellar, circumstellar and planetary environments. Even when the numbers of carbon and hydrogen atoms are restricted, changes in connectivity, unsaturation, ring formation and molecular topology produce many possible structures.
+
+In our [HydroMol study](https://doi.org/10.1002/jcc.70236), more than 2,700 neutral hydrocarbons with compositions CₙHₘ, where *n* and *m* range from 1 to 10, were generated stochastically and refined using density-functional theory. Approximately 2,000 of the resulting structures were absent from the major chemical repositories examined in the study.
+
+The structures, geometries, thermodynamic parameters and electronic properties are available through the open-access [HydroMol chemical-space explorer](https://hydromol.github.io/). The resource provides a searchable molecular inventory for computational astrochemistry and a starting point for identifying possible observational or spectroscopic targets.
+
+HydroMol establishes which structures appear in a defined computational chemical space; it does not establish that those molecules exist in an astronomical environment. Formation pathways, destruction processes, abundance, stability under the relevant conditions and sufficiently distinctive spectra must still be investigated. This is where chemical-space exploration connects to reaction discovery.
 
 ## From an automated search to a reaction mechanism
 
@@ -80,19 +92,21 @@ Theoretical rotational and vibrational parameters were also calculated so that s
 
 ## What the calculations do—and do not—establish
 
-Finding a product in an automated search establishes that a computational pathway has been located under a specified model. It does not establish that the molecule formed in a planetary atmosphere, an interstellar cloud or the early Earth.
+Finding a stable structure in a generated chemical space establishes that a minimum has been located under a specified computational model. It does not establish that the molecule is synthesised in nature, survives in an astronomical environment or reaches an observable abundance.
+
+Similarly, finding a product in an automated reaction search establishes that a computational pathway has been located. It does not establish that the molecule formed in a planetary atmosphere, an interstellar cloud or the early Earth.
 
 Thermodynamic stability does not guarantee kinetic accessibility. A low barrier does not guarantee appreciable abundance. Concentration, temperature, pressure, radiation, solvent, ice or mineral surfaces, competing reactions and destruction pathways all influence the resulting chemistry.
 
 Conversely, failure to find a pathway is not proof that it is impossible. Every search is limited by its sampling, electronic-structure method, charge and spin states, and representation of the environment.
 
-We therefore treat automated reaction discovery as a means of generating and ranking testable chemical hypotheses. Experiment, astronomical observation and further computation remain necessary.
+We therefore treat chemical-space and reaction-space exploration as means of generating and ranking testable chemical hypotheses. Experiment, astronomical observation and further computation remain necessary.
 
 ## Where this programme is going
 
 The next challenge is to move from collections of reaction candidates towards chemically interpretable networks. We are interested in combining:
 
-- broader and more systematic reaction-space sampling;
+- broader and more systematic molecular- and reaction-space sampling;
 - validated electronic-structure calculations;
 - reaction kinetics and competing pathways;
 - gas-phase, solvent, ice and surface environments;
@@ -100,10 +114,11 @@ The next challenge is to move from collections of reaction candidates towards ch
 - calculated spectroscopic observables;
 - machine-learned potentials with explicit validation and uncertainty.
 
-The objective is not simply to generate more molecules. It is to determine which parts of a large reaction space remain plausible after energetic, kinetic and environmental constraints are applied.
+The objective is not simply to generate more molecules. It is to determine which parts of large chemical and reaction spaces remain plausible after energetic, kinetic, spectroscopic and environmental constraints are applied.
 
 ## Selected papers
 
+- S. Giri, S. Satpati, T. Roy, S. Ghosal and A. Anoop, “[Computational Exploration of Small Hydrocarbon Networks: A Stochastic Generation and DFT Refinement Framework](https://doi.org/10.1002/jcc.70236),” *Journal of Computational Chemistry* **46**, e70236 (2025).
 - E. Boulanger, A. Anoop, D. Nachtigallová, W. Thiel and M. Barbatti, “[Photochemical Steps in the Prebiotic Synthesis of Purine Precursors from HCN](https://doi.org/10.1002/anie.201303246),” *Angewandte Chemie International Edition* **52**, 8000–8003 (2013).
 - S. Nandi, D. Bhattacharyya and A. Anoop, “[Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search](https://doi.org/10.1002/chem.201705492),” *Chemistry – A European Journal* **24**, 4885–4894 (2018).
 - S. Panda, A. Chiranjibi, D. Awasthi, S. Ghosal and A. Anoop, “[Exploring the Chemical Space of C₂H₃NO Isomers and Bimolecular Reactions with Hydrogen Cyanide and Formaldehyde](https://doi.org/10.1021/acsearthspacechem.3c00113),” *ACS Earth and Space Chemistry* **7**, 1739–1752 (2023).
@@ -115,4 +130,4 @@ The objective is not simply to generate more molecules. It is to determine which
 
 ## Connected research
 
-[Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore molecular aggregates and nanoclusters]({{ '/research/clusters/' | relative_url }}) · [Read the documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
+[Explore HydroMol](https://hydromol.github.io/) · [Explore PyAR]({{ '/research/pyar/' | relative_url }}) · [Explore molecular aggregates and nanoclusters]({{ '/research/clusters/' | relative_url }}) · [Read the PyAR documentation](https://pyar.readthedocs.io/en/latest/) · [Browse the PyAR source code](https://github.com/anooplab/pyar) · [Return to the research overview]({{ '/research/' | relative_url }}) · [Visit AnoopLab](https://anooplab.github.io/)
