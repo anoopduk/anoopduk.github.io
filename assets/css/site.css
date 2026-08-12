@@ -309,7 +309,6 @@ h3 {
   font-size: 1.15rem;
 }
 
-.three-column,
 .link-grid,
 .profile-groups {
   display: grid;
@@ -319,30 +318,14 @@ h3 {
   border: 1px solid var(--line);
 }
 
-.focus-item,
 .link-panel,
 .profile-groups > div {
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--bg);
 }
 
-.focus-item .number {
-  display: block;
-  margin-bottom: 3.5rem;
-  color: var(--faint);
-  font-family: var(--serif);
-  font-size: 0.85rem;
-}
-
-.focus-item p,
 .link-panel p {
   color: var(--muted);
-}
-
-.focus-links {
-  display: flex;
-  gap: 0.55rem 1rem;
-  flex-wrap: wrap;
 }
 
 .link-panel h3 a {
@@ -485,13 +468,9 @@ h3 {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
-  .three-column,
   .link-grid,
   .profile-groups {
     grid-template-columns: 1fr;
-  }
-  .focus-item .number {
-    margin-bottom: 1.5rem;
   }
   .site-footer__inner {
     grid-template-columns: 1fr 1fr;

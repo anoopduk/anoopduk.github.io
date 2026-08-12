@@ -105,6 +105,4 @@ This is a historical record of conferences, workshops, invited lectures, orienta
   <li data-year="2003"><span class="engagement-year">2003</span><span>Fifth CRSI National Symposium, 2003, Chennai, India.</span></li>
 </ol>
 
-<p class="archive-note">This archive was moved from the AnoopLab website in August 2026. Future additions will be maintained here.</p>
-
 For an invitation or academic discussion, write to [{{ site.data.profile.email }}](mailto:{{ site.data.profile.email }}).

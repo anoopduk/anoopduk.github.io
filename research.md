@@ -1,29 +1,29 @@
 ---
 layout: page
 title: Research
-eyebrow: Research at AnoopLab
-description: A personal gateway to the AnoopLab programme in automated chemical exploration and scientific machine learning for molecular discovery.
+eyebrow: Research approach
+description: How I use automated chemical exploration, scientific machine learning and quantum chemistry to study molecular structure, reactivity and function.
 permalink: /research/
 ---
 
-The research programme I guide is carried out collectively by [AnoopLab](https://anooplab.github.io/). The lab website is therefore the authoritative record of the programme, its projects, publications, software and people.
+A computational result is only as useful as the question and the candidates that produced it. Much of my work began with calculations on a proposed structure, mechanism or molecule. Over time, the more interesting problem became what had not been proposed: alternative products, lower-energy structures and overlooked regions of chemical space.
 
-It has two connected directions.
+## Exploring before selecting
 
-## Automated chemical exploration
+Hand-selected candidates inevitably carry a researcher’s assumptions. My work on automated chemical exploration therefore focuses on methods that generate structures, navigate reaction pathways and search large spaces more systematically. Automation does not remove chemical judgement; it makes assumptions explicit and allows them to be tested across more possibilities.
 
-We develop software and search strategies that generate molecular structures, navigate reaction pathways and explore complex chemical spaces with less manual bias. [PyAR](https://anooplab.github.io/research/pyar/) is the principal software programme supporting this work.
+## Using machine learning scientifically
 
-## Scientific machine learning
+When the number of candidates outgrows the number that can be examined with demanding calculations, machine learning can accelerate energy estimates, guide which candidates are evaluated next and reveal relationships worth testing. It is useful only when the model’s training domain, uncertainty and failure modes remain visible. Benchmark performance alone is not a scientific conclusion.
 
-We use machine learning to accelerate energy models, guide molecular search and identify interpretable structure–property relationships. Chemical grounding, validation, uncertainty and domain limits matter more than benchmark performance alone.
+## Keeping chemistry as the test
 
-The directions are not independent: automated exploration produces structures, reactions and data; scientific machine learning helps rank, accelerate and interpret them; quantum chemistry and chemical reasoning test the results.
+Search algorithms and learned models propose and prioritise. Electronic-structure calculations, mechanistic reasoning and comparison with experiment, where available, determine whether the resulting candidates are credible. I am interested in workflows in which each method has a defined role and the outputs remain inspectable and reproducible.
 
-Current applications include [reaction discovery, astrochemistry and prebiotic chemical space](https://anooplab.github.io/research/reaction-discovery/), [molecular aggregates, nanoclusters and nanoalloys](https://anooplab.github.io/research/clusters/), and [molecular discovery and functional materials](https://anooplab.github.io/research/functional-materials/).
+## A collective programme
 
-[Read the full AnoopLab research programme →](https://anooplab.github.io/research/)
+These ideas are developed with students and collaborators through AnoopLab. The group programme applies them to reaction discovery, molecular and nanocluster structures, and functional molecular design.
 
-The account of [collaborative research](https://anooplab.github.io/research/collaborations/) explains how experimental and theoretical collaborations shaped the programme. The [publication archive](https://anooplab.github.io/publications/) provides the complete scholarly record, while software and data are maintained through the [AnoopLab GitHub organisation](https://github.com/anooplab).
-
-This personal site remains a gateway to that collective work and a home for my biography, teaching, writing and professional engagements.
+[Explore the AnoopLab research programme →](https://anooplab.github.io/research/)  
+[Read how collaborations shaped it →](https://anooplab.github.io/research/collaborations/)  
+[Browse the publication archive →](https://anooplab.github.io/publications/)
