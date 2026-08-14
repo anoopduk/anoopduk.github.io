@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch only the CM4 portraits that failed or mismatched in the QA build."""
 from pathlib import Path
-import io, json, math
+import io, json, math, urllib3
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -14,6 +14,7 @@ QA = ROOT / "portrait-fixes" / "qa"
 OUT.mkdir(parents=True, exist_ok=True)
 QA.mkdir(parents=True, exist_ok=True)
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 S = requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 CM4/2026 portrait-localizer", "Accept-Language":"en-US,en;q=0.8"})
 
@@ -24,14 +25,18 @@ DIRECT = {
     "susmita-de": ("Susmita De", "https://chem.cusat.ac.in/wp-content/uploads/ultimatemember/12/susmita.jpeg"),
     "jayasree-eg": ("Jayasree E. G.", "https://chem.cusat.ac.in/wp-content/uploads/ultimatemember/12/jsree.jpg"),
     "pancharatna-pd": ("Pancharatna P. D.", "https://webfiles.amrita.edu/2025/03/dr-pancharatna-asst-chem-amritapuri.jpg"),
-    "dandamudi-usharani": ("Dandamudi Usharani", "https://loop.frontiersin.org/images/profile/851469/203"),
+    "dandamudi-usharani": ("Dandamudi Usharani", "https://cift.res.in/uploads/userfiles/foodsafety5.jpg"),
     "g-narahari-sastry": ("G. Narahari Sastry", "https://www.chem.iitb.ac.in/tcs2025/assets/img/speakers/narahari.jpg"),
     "sandeep-kumar": ("Sandeep Kumar", "https://www.chem.iitb.ac.in/tcs2025/assets/img/speakers/sandeepkumar.jpg"),
 }
 
 
 def fetch_image(url, referer=None):
-    r=S.get(url, timeout=20, headers={"Referer":referer} if referer else None)
+    headers={"Referer":referer} if referer else None
+    try:
+        r=S.get(url, timeout=22, headers=headers)
+    except requests.exceptions.SSLError:
+        r=S.get(url, timeout=22, headers=headers, verify=False)
     r.raise_for_status()
     im=Image.open(io.BytesIO(r.content))
     return ImageOps.exif_transpose(im).convert("RGB")
@@ -39,7 +44,11 @@ def fetch_image(url, referer=None):
 
 def niper_bharatam():
     page="https://www.niper.gov.in/faculty/prof-p-v-bharatam"
-    r=S.get(page,timeout=30); r.raise_for_status()
+    try:
+        r=S.get(page,timeout=30)
+    except requests.exceptions.SSLError:
+        r=S.get(page,timeout=30,verify=False)
+    r.raise_for_status()
     soup=BeautifulSoup(r.text,"html.parser")
     candidates=[]
     for img in soup.find_all("img"):
@@ -48,10 +57,10 @@ def niper_bharatam():
         if not src: continue
         url=requests.compat.urljoin(r.url,src)
         score=0
-        if "bharat" in label: score += 100
+        if "bharat" in label: score += 120
         if "prof" in label: score += 20
-        if "faculty" in label: score += 10
-        if "logo" in label or "icon" in label: score -= 80
+        if "faculty" in label: score += 15
+        if "logo" in label or "icon" in label: score -= 100
         candidates.append((score,url,label))
     candidates.sort(reverse=True)
     (QA/"bharatam-candidates.json").write_text(json.dumps(candidates,indent=2),encoding="utf-8")
@@ -59,7 +68,7 @@ def niper_bharatam():
         try:
             im=fetch_image(url,page)
             fs=base.faces(im)
-            if score>=80 or fs:
+            if score>=80 or (fs and score>=0):
                 return im,url,fs
         except Exception:
             pass
@@ -92,7 +101,6 @@ def main():
         report.append({"name":"Bharatam V. Prasad","slug":"bharatam-v-prasad","status":"failed","reason":f"{type(e).__name__}: {e}"})
         print("FAIL Bharatam",e,flush=True)
     (QA/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding="utf-8")
-    # contact sheet for visual identity/crop QA
     good=[]
     for r in report:
         p=OUT/f"{r['slug']}.webp"
