@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Fetch only the CM4 portraits that failed or mismatched in the QA build."""
+"""Fetch the final two verified CM4 portraits for local publication."""
+import io, json, math
 from pathlib import Path
-import io, json, math, urllib3
 import requests
-from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont, ImageOps
-
 import build_portraits as base
 
 ROOT = base.ROOT
@@ -14,102 +12,40 @@ QA = ROOT / "portrait-fixes" / "qa"
 OUT.mkdir(parents=True, exist_ok=True)
 QA.mkdir(parents=True, exist_ok=True)
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-S = requests.Session()
-S.headers.update({"User-Agent":"Mozilla/5.0 CM4/2026 portrait-localizer", "Accept-Language":"en-US,en;q=0.8"})
-
-DIRECT = {
-    "b-kiran": ("B. Kiran", "https://www.mcneese.edu/wp-content/uploads/2026/06/Kiran-Boggavarapu-4.18-683x1024.jpg"),
-    "milan-kumar-jena": ("Milan Kumar Jena", "https://iitbhilai.irins.org/profile_images/687083.jpg"),
-    "soujanya-yarasi": ("Soujanya Yarasi", "https://static.wixstatic.com/media/7663d2_b829eedb509941c6ace456bba4a77ec6~mv2.jpg/v1/fill/w_212,h_215,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dr_edited.jpg"),
-    "susmita-de": ("Susmita De", "https://chem.cusat.ac.in/wp-content/uploads/ultimatemember/12/susmita.jpeg"),
-    "jayasree-eg": ("Jayasree E. G.", "https://chem.cusat.ac.in/wp-content/uploads/ultimatemember/12/jsree.jpg"),
-    "pancharatna-pd": ("Pancharatna P. D.", "https://webfiles.amrita.edu/2025/03/dr-pancharatna-asst-chem-amritapuri.jpg"),
-    "dandamudi-usharani": ("Dandamudi Usharani", "https://cift.res.in/uploads/userfiles/foodsafety5.jpg"),
-    "g-narahari-sastry": ("G. Narahari Sastry", "https://www.chem.iitb.ac.in/tcs2025/assets/img/speakers/narahari.jpg"),
-    "sandeep-kumar": ("Sandeep Kumar", "https://www.chem.iitb.ac.in/tcs2025/assets/img/speakers/sandeepkumar.jpg"),
+SOURCES = {
+    "susmita-de": ("Susmita De", "https://chemistry.uoc.ac.in/images/2024/WhatsApp_Image_2025-03-12_at_07.21.13.jpeg"),
+    "jayasree-eg": ("Jayasree E. G.", "https://0.academia-photos.com/34049098/9998918/86347145/s200_jayasree.e_g.jpg"),
 }
 
-
-def fetch_image(url, referer=None):
-    headers={"Referer":referer} if referer else None
-    try:
-        r=S.get(url, timeout=22, headers=headers)
-    except requests.exceptions.SSLError:
-        r=S.get(url, timeout=22, headers=headers, verify=False)
+def fetch(url):
+    r = requests.get(url, timeout=30, headers={"User-Agent":"Mozilla/5.0 CM4/2026 portrait-localizer"})
     r.raise_for_status()
-    im=Image.open(io.BytesIO(r.content))
-    return ImageOps.exif_transpose(im).convert("RGB")
-
-
-def niper_bharatam():
-    page="https://www.niper.gov.in/faculty/prof-p-v-bharatam"
-    try:
-        r=S.get(page,timeout=30)
-    except requests.exceptions.SSLError:
-        r=S.get(page,timeout=30,verify=False)
-    r.raise_for_status()
-    soup=BeautifulSoup(r.text,"html.parser")
-    candidates=[]
-    for img in soup.find_all("img"):
-        label=" ".join(str(img.get(k,"")) for k in ("alt","title","class","id")).lower()
-        src=img.get("src") or img.get("data-src") or img.get("data-lazy-src")
-        if not src: continue
-        url=requests.compat.urljoin(r.url,src)
-        score=0
-        if "bharat" in label: score += 120
-        if "prof" in label: score += 20
-        if "faculty" in label: score += 15
-        if "logo" in label or "icon" in label: score -= 100
-        candidates.append((score,url,label))
-    candidates.sort(reverse=True)
-    (QA/"bharatam-candidates.json").write_text(json.dumps(candidates,indent=2),encoding="utf-8")
-    for score,url,label in candidates:
-        try:
-            im=fetch_image(url,page)
-            fs=base.faces(im)
-            if score>=80 or (fs and score>=0):
-                return im,url,fs
-        except Exception:
-            pass
-    raise RuntimeError("No NIPER Bharatam portrait located")
-
-
-def crop_save(name, slug, im, source, fs=None):
-    fs = base.faces(im) if fs is None else fs
-    out=base.crop_face(im,fs)
-    dest=OUT/f"{slug}.webp"
-    base.save_webp(out,dest)
-    return {"name":name,"slug":slug,"source":source,"source_size":list(im.size),"faces":[list(x) for x in fs],"bytes":dest.stat().st_size,"status":"ok"}
-
+    return ImageOps.exif_transpose(Image.open(io.BytesIO(r.content))).convert("RGB")
 
 def main():
     report=[]
-    for slug,(name,url) in DIRECT.items():
+    for slug,(name,url) in SOURCES.items():
         try:
-            im=fetch_image(url)
-            report.append(crop_save(name,slug,im,url))
+            im=fetch(url)
+            fs=base.faces(im)
+            out=base.crop_face(im,fs)
+            dest=OUT/f"{slug}.webp"
+            base.save_webp(out,dest)
+            report.append({"name":name,"slug":slug,"source":url,"source_size":list(im.size),"faces":[list(x) for x in fs],"bytes":dest.stat().st_size,"status":"ok"})
             print("OK",name,im.size,flush=True)
         except Exception as e:
             report.append({"name":name,"slug":slug,"source":url,"status":"failed","reason":f"{type(e).__name__}: {e}"})
             print("FAIL",name,e,flush=True)
-    try:
-        im,url,fs=niper_bharatam()
-        report.append(crop_save("Bharatam V. Prasad","bharatam-v-prasad",im,url,fs))
-        print("OK Bharatam V. Prasad",im.size,flush=True)
-    except Exception as e:
-        report.append({"name":"Bharatam V. Prasad","slug":"bharatam-v-prasad","status":"failed","reason":f"{type(e).__name__}: {e}"})
-        print("FAIL Bharatam",e,flush=True)
     (QA/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding="utf-8")
     good=[]
     for r in report:
         p=OUT/f"{r['slug']}.webp"
         if p.exists(): good.append((r['name'],Image.open(p).convert('RGB')))
-    cols=5; tw,th,lh=192,240,42; rows=max(1,math.ceil(len(good)/cols))
-    sheet=Image.new('RGB',(cols*tw,rows*(th+lh)),'white'); d=ImageDraw.Draw(sheet); font=ImageFont.load_default()
+    tw,th,lh=240,300,42
+    sheet=Image.new('RGB',(max(1,len(good))*tw,th+lh),'white')
+    d=ImageDraw.Draw(sheet); font=ImageFont.load_default()
     for i,(name,im) in enumerate(good):
-        x=(i%cols)*tw; y=(i//cols)*(th+lh)
-        sheet.paste(im.resize((tw,th),Image.Resampling.LANCZOS),(x,y)); d.text((x+4,y+th+6),name,fill='black',font=font)
+        x=i*tw; sheet.paste(im.resize((tw,th),Image.Resampling.LANCZOS),(x,0)); d.text((x+4,th+6),name,fill='black',font=font)
     sheet.save(QA/"contact-sheet.jpg",quality=90,optimize=True)
     return 0
 
