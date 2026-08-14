@@ -61,8 +61,8 @@ jobs:
           cp /tmp/polish/people/*.webp cm4-2026/assets/people/
           cp /tmp/rajeev/people/*.webp cm4-2026/assets/people/
 
-          # Sason Shaik was the only public-source portrait not retained by the QA artifacts.
-          curl --fail --location --retry 2 -A 'Mozilla/5.0' \
+          # One-time import from the known Sason Shaik portrait source. The source server has an incomplete TLS chain.
+          curl --fail --location --retry 2 --insecure -A 'Mozilla/5.0' \
             'https://www.eurchembond.com/wp-content/uploads/2024/06/Sason_Shaik-500x500.jpg' \
             -o /tmp/sason-shaik.jpg
           python - <<'PY'
@@ -72,7 +72,6 @@ jobs:
           im.save('cm4-2026/assets/people/sason-shaik.webp','WEBP',quality=82,method=6)
           PY
 
-          # Pavankumar is supplied directly by the organiser and pre-cropped to the same 4:5 standard.
           cp cm4-2026/portrait-seed/pnv-pavankumar.webp cm4-2026/assets/people/pnv-pavankumar.webp
 
           count="$(find cm4-2026/assets/people -maxdepth 1 -name '*.webp' | wc -l)"
