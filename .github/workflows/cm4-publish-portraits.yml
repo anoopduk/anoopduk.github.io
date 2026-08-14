@@ -18,11 +18,14 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Install image tooling
+        run: python -m pip install --quiet pillow
 
       - name: Assemble verified portrait set
         env:
@@ -42,7 +45,6 @@ jobs:
             unzip -q "/tmp/${name}.zip" -d "/tmp/$name"
           }
 
-          # QA baseline and only the verified corrective overlays from the same repository.
           download_artifact 9224031746 base
           download_artifact 9224402328 fixes
           download_artifact 9224492224 lasttwo
@@ -58,39 +60,51 @@ jobs:
           cp /tmp/susmita/people/*.webp cm4-2026/assets/people/
           cp /tmp/polish/people/*.webp cm4-2026/assets/people/
           cp /tmp/rajeev/people/*.webp cm4-2026/assets/people/
-          cp cm4-2026/portrait-seed/sason-shaik.webp cm4-2026/assets/people/sason-shaik.webp
+
+          # Sason Shaik was the only public-source portrait not retained by the QA artifacts.
+          curl --fail --location --retry 2 -A 'Mozilla/5.0' \
+            'https://www.eurchembond.com/wp-content/uploads/2024/06/Sason_Shaik-500x500.jpg' \
+            -o /tmp/sason-shaik.jpg
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          im=Image.open('/tmp/sason-shaik.jpg').convert('RGB')
+          im=ImageOps.fit(im,(480,600),method=Image.Resampling.LANCZOS,centering=(0.5,0.48))
+          im.save('cm4-2026/assets/people/sason-shaik.webp','WEBP',quality=82,method=6)
+          PY
+
+          # Pavankumar is supplied directly by the organiser and pre-cropped to the same 4:5 standard.
+          cp cm4-2026/portrait-seed/pnv-pavankumar.webp cm4-2026/assets/people/pnv-pavankumar.webp
 
           count="$(find cm4-2026/assets/people -maxdepth 1 -name '*.webp' | wc -l)"
           echo "Assembled $count portraits"
-          test "$count" -eq 43
+          test "$count" -eq 44
 
       - name: Verify image files
         run: |
-          python -m pip install --quiet pillow
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
           files=sorted(Path('cm4-2026/assets/people').glob('*.webp'))
-          assert len(files)==43, len(files)
+          assert len(files)==44, len(files)
           bad=[]
           for p in files:
               try:
                   with Image.open(p) as im:
                       im.load()
-                      if im.size != (480,600): bad.append((p.name, im.size))
+                      if im.size != (480,600): bad.append((p.name,im.size))
               except Exception as exc:
-                  bad.append((p.name, str(exc)))
-          assert not bad, bad
-          print('Verified 43 readable portraits at 480x600.')
+                  bad.append((p.name,str(exc)))
+          assert not bad,bad
+          print('Verified 44 readable portraits at 480x600.')
           PY
 
       - name: Point every person card to local portraits
         run: |
           python - <<'PY'
           from pathlib import Path
-          import html, re
+          import html,re
 
-          mapping = {
+          mapping={
             'Rajeev Ahuja':'rajeev-ahuja',
             'Deb Ranjan Banerjee':'deb-ranjan-banerjee',
             'Aditi Chandrasekar':'aditi-chandrasekhar',
@@ -122,6 +136,7 @@ jobs:
             'Susmita De':'susmita-de',
             'C. H. Suresh':'ch-suresh',
             'Mahesh Hariharan':'mahesh-hariharan',
+            'P. N. V. Pavankumar':'pnv-pavankumar',
             'Bharatam V. Prasad':'bharatam-v-prasad',
             'G. Narahari Sastry':'g-narahari-sastry',
             'G. Subramanian':'govindan-subramanian',
@@ -137,61 +152,64 @@ jobs:
             'Priyakumari C. P.':'priyakumari-cp',
             'Naiwrit Karmodak':'naiwrit-karmodak',
           }
-          target_slugs=set(mapping.values())
-          assert len(target_slugs)==43, len(target_slugs)
+          target=set(mapping.values())
+          assert len(target)==44,len(target)
           existing={p.stem for p in Path('cm4-2026/assets/people').glob('*.webp')}
-          assert existing == target_slugs, (sorted(target_slugs-existing), sorted(existing-target_slugs))
+          assert existing==target,(sorted(target-existing),sorted(existing-target))
 
           path=Path('cm4-2026/index.html')
           text=path.read_text(encoding='utf-8')
-          card_re=re.compile(r'<(?:a|article)\s+class="person-card"[^>]*>.*?</(?:a|article)>', re.S)
+          card_re=re.compile(r'<(?:a|article)\s+class="person-card"[^>]*>.*?</(?:a|article)>',re.S)
           changed=[]
-
           def patch_card(m):
               card=m.group(0)
-              nm=re.search(r'<h3>(.*?)</h3>', card, re.S)
-              if not nm: return card
+              nm=re.search(r'<h3>(.*?)</h3>',card,re.S)
+              if not nm:return card
               name=html.unescape(re.sub(r'<[^>]+>','',nm.group(1))).strip()
               slug=mapping.get(name)
-              if not slug: return card
-              mark=re.search(r'<span class="person-mark">.*?</span>', card, re.S)
+              if not slug:return card
+              mark=re.search(r'<span class="person-mark">.*?</span>',card,re.S)
               mark_html=mark.group(0) if mark else ''
               img=(f'<img class="person-photo" src="assets/people/{slug}.webp" '
-                   f'alt="{html.escape(name, quote=True)}" loading="lazy" decoding="async" '
+                   f'alt="{html.escape(name,quote=True)}" loading="lazy" decoding="async" '
                    f'width="480" height="600">')
               portrait=f'<span class="portrait">{mark_html}{img}</span>'
-              new,n=re.subn(r'<span class="portrait">.*?</span>(?=<span class="person-copy">)', portrait, card, count=1, flags=re.S)
-              if n != 1:
-                  raise RuntimeError(f'Could not patch portrait block for {name}')
+              new,n=re.subn(r'<span class="portrait">.*?</span>(?=<span class="person-copy">)',portrait,card,count=1,flags=re.S)
+              if n!=1:raise RuntimeError(f'Could not patch portrait block for {name}')
               changed.append((name,slug))
               return new
-
           out=card_re.sub(patch_card,text)
-          seen_slugs={slug for _,slug in changed}
-          missing=target_slugs-seen_slugs
-          if len(seen_slugs)!=43 or missing:
-              raise RuntimeError(f'Expected 43 local portrait cards; changed={len(seen_slugs)} missing={sorted(missing)}')
-          remote=re.findall(r'<img class="person-photo"[^>]+src="https?://',out)
-          if remote:
-              raise RuntimeError(f'Remote person-photo URLs remain: {len(remote)}')
+          seen={slug for _,slug in changed}
+          missing=target-seen
+          if len(seen)!=44 or missing:
+              raise RuntimeError(f'Expected 44 local portrait cards; changed={len(seen)} missing={sorted(missing)}')
+          if re.findall(r'<img class="person-photo"[^>]+src="https?://',out):
+              raise RuntimeError('Remote person-photo URLs remain')
           path.write_text(out,encoding='utf-8')
-          print('Rewrote 43 portrait cards to local WebP assets.')
+          print('Rewrote 44 portrait cards to local WebP assets.')
           PY
 
       - name: Tune portrait rendering
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
           p=Path('cm4-2026/styles.css')
           s=p.read_text(encoding='utf-8')
-          old='.person-photo{position:absolute;inset:0;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 25%;background:var(--paper-2)}'
-          new='.person-photo{position:absolute;inset:0;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 32%;background:var(--paper-2)}'
-          if old in s: s=s.replace(old,new)
-          elif new not in s: raise RuntimeError('Expected person-photo CSS rule not found')
+          s=re.sub(r'\.person-card\{padding:1rem 0;border-bottom:1px solid var\(--line\);display:grid;grid-template-columns:[^;]+;',
+                   '.person-card{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:68px 1fr auto;',s)
+          s=re.sub(r'\.person-mark\{width:52px;height:52px;border-radius:50%;',
+                   '.person-mark{width:56px;height:70px;border-radius:10px;',s)
+          s=re.sub(r'\.portrait\{width:52px;height:52px;position:relative;display:block\}',
+                   '.portrait{width:56px;height:70px;position:relative;display:block;overflow:hidden;border-radius:10px}',s)
+          s=re.sub(r'\.person-photo\{position:absolute;inset:0;width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center [^;]+;',
+                   '.person-photo{position:absolute;inset:0;width:56px;height:70px;border-radius:10px;object-fit:cover;object-position:center center;',s)
+          s=re.sub(r'\.compact-list \.person-card\{grid-template-columns:44px 1fr\}\.compact-list \.person-mark\{width:38px;height:38px\}',
+                   '.compact-list .person-card{grid-template-columns:52px 1fr}.compact-list .portrait,.compact-list .person-photo,.compact-list .person-mark{width:48px;height:60px;border-radius:9px}',s)
           p.write_text(s,encoding='utf-8')
           PY
 
-      - name: Commit published portraits
+      - name: Commit completed CM4 portrait set
         shell: bash
         run: |
           set -euo pipefail
@@ -200,5 +218,5 @@ jobs:
           git config user.email 'actions@users.noreply.github.com'
           git add cm4-2026/assets/people cm4-2026/index.html cm4-2026/styles.css cm4-2026/portrait-seed
           git diff --cached --stat
-          git commit -m 'Publish local optimized CM4 participant portraits'
+          git commit -m 'Finish CM4 local portrait set'
           git push
