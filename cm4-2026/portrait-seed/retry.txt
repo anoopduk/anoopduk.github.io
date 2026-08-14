@@ -1,0 +1,1 @@
+Retry CM4 portrait publication after handling the known Sason Shaik source TLS-chain issue.
