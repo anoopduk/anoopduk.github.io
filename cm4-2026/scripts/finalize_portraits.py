@@ -75,6 +75,7 @@ text = HTML.read_text(encoding="utf-8")
 card_re = re.compile(r'<(?:a|article)\s+class="person-card"[^>]*>.*?</(?:a|article)>', re.S)
 seen = set()
 
+
 def patch_card(match):
     card = match.group(0)
     nm = re.search(r"<h3>(.*?)</h3>", card, re.S)
@@ -85,6 +86,7 @@ def patch_card(match):
     if not slug:
         return card
     seen.add(slug)
+
     mark = re.search(r'<span class="person-mark">.*?</span>', card, re.S)
     mark_html = mark.group(0) if mark else ""
     img = (
@@ -93,6 +95,8 @@ def patch_card(match):
         f'width="480" height="600">'
     )
     portrait = f'<span class="portrait">{mark_html}{img}</span>'
+
+    # Participant/organiser cards already have a portrait wrapper.
     new, n = re.subn(
         r'<span class="portrait">.*?</span>(?=<span class="person-copy">)',
         portrait,
@@ -100,9 +104,22 @@ def patch_card(match):
         count=1,
         flags=re.S,
     )
+
+    # Academic-committee cards in the source HTML are initials-only and have
+    # the person-mark directly before person-copy. Wrap those here as well.
+    if n == 0:
+        new, n = re.subn(
+            r'<span class="person-mark">.*?</span>(?=<span class="person-copy">)',
+            portrait,
+            card,
+            count=1,
+            flags=re.S,
+        )
+
     if n != 1:
         raise RuntimeError(f"Could not patch portrait block for {name}")
     return new
+
 
 out = card_re.sub(patch_card, text)
 assert seen == TARGET, sorted(TARGET - seen)
@@ -111,7 +128,8 @@ assert len(re.findall(r'<img class="person-photo"[^>]+src="assets/people/', out)
 HTML.write_text(out, encoding="utf-8")
 
 # Replace the old circular thumbnails with restrained 4:5 portrait cards.
-s = CSS.read_text(encoding="utf-8")ns = re.sub(
+s = CSS.read_text(encoding="utf-8")
+s = re.sub(
     r'\.person-card\{padding:1rem 0;border-bottom:1px solid var\(--line\);display:grid;grid-template-columns:[^;]+;',
     '.person-card{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:68px 1fr auto;',
     s,
