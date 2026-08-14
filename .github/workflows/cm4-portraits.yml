@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/cm4-portraits.yml'
-      - 'cm4-2026/scripts/build_portraits.py'
+      - 'cm4-2026/scripts/**'
       - 'cm4-2026/assets/people/govindan-subramanian.webp'
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
           pip install pillow requests beautifulsoup4 'opencv-python-headless==4.12.0.88' pymupdf
 
       - name: Build portraits
-        run: python cm4-2026/scripts/build_portraits.py
+        run: python cm4-2026/scripts/build_portraits_v2.py
 
       - name: Summarize
         if: always()
