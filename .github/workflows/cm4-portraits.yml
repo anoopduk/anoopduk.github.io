@@ -32,7 +32,7 @@ jobs:
       - name: Install image tooling
         run: |
           python -m pip install --upgrade pip
-          pip install pillow requests beautifulsoup4 opencv-python-headless pymupdf
+          pip install pillow requests beautifulsoup4 'opencv-python-headless==4.12.0.88' pymupdf
 
       - name: Build portraits
         run: python cm4-2026/scripts/build_portraits.py
