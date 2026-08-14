@@ -1,0 +1,61 @@
+name: CM4 portrait QA build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cm4-portraits.yml'
+      - 'cm4-2026/scripts/build_portraits.py'
+      - 'cm4-2026/assets/people/govindan-subramanian.webp'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cm4-portrait-qa
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install image tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow requests beautifulsoup4 opencv-python-headless pymupdf
+
+      - name: Build portraits
+        run: python cm4-2026/scripts/build_portraits.py
+
+      - name: Summarize
+        if: always()
+        run: |
+          echo '### CM4 portrait build' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f cm4-2026/portrait-qa/report.txt ]; then
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            cat cm4-2026/portrait-qa/report.txt >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          du -sh cm4-2026/assets/people 2>/dev/null || true
+
+      - name: Upload QA artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm4-portrait-qa
+          path: |
+            cm4-2026/assets/people
+            cm4-2026/portrait-qa
+          if-no-files-found: error
+          retention-days: 7
