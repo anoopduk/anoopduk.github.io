@@ -1,0 +1,1 @@
+Run final CM4 portrait publication with binary-safe reconstruction and verification.
