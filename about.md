@@ -87,3 +87,5 @@ Digital University Kerala<br>
 Thiruvananthapuram, Kerala, India
 
 [anoop.a@duk.ac.in](mailto:anoop.a@duk.ac.in) · [Official university profile](https://duk.ac.in/personnel/anoop-ayyappan/)
+
+{% include profile-links.html %}

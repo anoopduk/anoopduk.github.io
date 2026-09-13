@@ -1,37 +1,25 @@
-<div class="profile-groups">
-  <div>
-    <h2>Academic profiles</h2>
-    <ul class="plain-list inline-list">
+<div class="profile-icons" aria-label="Professional profiles">
+  <div class="profile-icons__group">
+    <p>Research profiles</p>
+    <ul>
       {% for item in site.data.profile.academic %}
-      <li>
-        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
-          >{{ item.label }}</a
-        >
-      </li>
+      <li><a href="{{ item.url }}" target="_blank" rel="me noreferrer" aria-label="{{ item.label }}" data-label="{{ item.label }}">{% case item.label %}{% when "Google Scholar" %}<span class="icon-mark icon-mark--scholar" aria-hidden="true">⌁</span>{% when "ORCID" %}<span class="icon-mark icon-mark--orcid" aria-hidden="true">iD</span>{% when "Scopus" %}<span class="icon-mark icon-mark--scopus" aria-hidden="true">S</span>{% when "ResearchGate" %}<span class="icon-mark icon-mark--researchgate" aria-hidden="true">RG</span>{% endcase %}<span class="sr-only">{{ item.label }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
-  <div>
-    <h2>Code and research group</h2>
-    <ul class="plain-list inline-list">
+  <div class="profile-icons__group">
+    <p>Code and research group</p>
+    <ul>
       {% for item in site.data.profile.code %}
-      <li>
-        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
-          >{{ item.label }}</a
-        >
-      </li>
+      <li><a href="{{ item.url }}" target="_blank" rel="me noreferrer" aria-label="{{ item.label }}" data-label="{{ item.label }}">{% case item.label %}{% when "GitHub" %}<span class="icon-mark icon-mark--github" aria-hidden="true">&lt;/&gt;</span>{% when "AnoopLab" %}<span class="icon-mark icon-mark--anooplab" aria-hidden="true">AL</span>{% endcase %}<span class="sr-only">{{ item.label }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
-  <div>
-    <h2>Connect</h2>
-    <ul class="plain-list inline-list">
+  <div class="profile-icons__group">
+    <p>Connect</p>
+    <ul>
       {% for item in site.data.profile.social %}
-      <li>
-        <a href="{{ item.url }}" target="_blank" rel="me noreferrer"
-          >{{ item.label }}</a
-        >
-      </li>
+      <li><a href="{{ item.url }}" target="_blank" rel="me noreferrer" aria-label="{{ item.label }}" data-label="{{ item.label }}">{% case item.label %}{% when "LinkedIn" %}<span class="icon-mark icon-mark--linkedin" aria-hidden="true">in</span>{% when "X" %}<span class="icon-mark icon-mark--x" aria-hidden="true">𝕏</span>{% when "Instagram" %}<span class="icon-mark icon-mark--instagram" aria-hidden="true">◎</span>{% when "Facebook" %}<span class="icon-mark icon-mark--facebook" aria-hidden="true">f</span>{% endcase %}<span class="sr-only">{{ item.label }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
