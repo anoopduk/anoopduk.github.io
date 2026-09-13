@@ -1,6 +1,6 @@
 title: A. Anoop
 description: >-
-  Personal website of A. Anoop (Anoop Ayyappan), also published as Anakuthil Anoop,
+  Personal website of A. Anoop (Anoop Ayyappan), who publishes as Anakuthil Anoop,
   professor and computational chemist working on automated chemical exploration,
   molecular discovery and scientific machine learning.
 url: https://anoopduk.github.io
@@ -10,7 +10,7 @@ locale: en_GB
 timezone: Asia/Kolkata
 
 author:
-  name: A. Anoop
+  name: Anakuthil Anoop
   url: https://anoopduk.github.io/about/
   twitter: A_Anoop_A
 
@@ -19,7 +19,7 @@ twitter:
   card: summary
 
 social:
-  name: A. Anoop (Anoop Ayyappan)
+  name: Anakuthil Anoop
   links:
     - https://orcid.org/0000-0002-8116-5506
     - https://scholar.google.com/citations?user=QgKaomgAAAAJ
