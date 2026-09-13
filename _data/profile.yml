@@ -1,0 +1,33 @@
+name: A. Anoop
+full_name: Anakuthil Anoop Ayyappan
+role: Professor and computational chemist
+affiliation: Digital University Kerala
+affiliation_url: https://duk.ac.in/
+official_profile: https://duk.ac.in/personnel/anoop-ayyappan/
+email: anoop.a@duk.ac.in
+
+academic:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=QgKaomgAAAAJ&hl=en
+  - label: ORCID
+    url: https://orcid.org/0000-0002-8116-5506
+  - label: Scopus
+    url: https://www.scopus.com/authid/detail.uri?authorId=6508191130
+  - label: ResearchGate
+    url: https://www.researchgate.net/profile/Anakuthil_Anoop/publications
+
+code:
+  - label: GitHub
+    url: https://github.com/anooplab
+  - label: AnoopLab
+    url: https://anooplab.github.io/
+
+social:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/anoop-a-9286125/
+  - label: X
+    url: https://x.com/A_Anoop_A
+  - label: Instagram
+    url: https://www.instagram.com/a_anoop_a/
+  - label: Facebook
+    url: https://www.facebook.com/profile.php?id=61555278326807
