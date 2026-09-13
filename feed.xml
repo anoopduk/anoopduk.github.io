@@ -9,7 +9,7 @@ permalink: /feed.xml
   <link href="{{ '/' | absolute_url }}" />
   <id>{{ '/' | absolute_url }}</id>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <author><name>A. Anoop</name></author>
+  <author><name>Anakuthil Anoop</name></author>
   {% assign articles = site.pages | where: "kind", "article" | sort: "date" | reverse %}
   {% for item in articles limit: 20 %}
   <entry>
@@ -21,4 +21,3 @@ permalink: /feed.xml
   </entry>
   {% endfor %}
 </feed>
-

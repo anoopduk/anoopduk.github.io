@@ -14,6 +14,6 @@ Alongside research and teaching, I have worked in academic administration, edito
 
 ## Name and scholarly record
 
-I publish and work publicly as **A. Anoop**. Bibliographic databases may also index my work under **Anoop Ayyappan**, **Anakuthil Anoop** or **Anakuthil Anoop Ayyappan**. My [ORCID record](https://orcid.org/0000-0002-8116-5506) is the most reliable identifier across these variations.
+I publish as **Anakuthil Anoop**. Institutional and other public records may also identify me as **Anoop Ayyappan**, **A. Anoop** or **Anakuthil Anoop Ayyappan**. My [ORCID record](https://orcid.org/0000-0002-8116-5506) is the most reliable identifier across these variations.
 
 {% include profile-links.html %}
