@@ -309,8 +309,7 @@ h3 {
   font-size: 1.15rem;
 }
 
-.link-grid,
-.profile-groups {
+.link-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
@@ -318,8 +317,7 @@ h3 {
   border: 1px solid var(--line);
 }
 
-.link-panel,
-.profile-groups > div {
+.link-panel {
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--bg);
 }
@@ -409,26 +407,194 @@ h3 {
   margin-top: 0.4rem;
 }
 
-.plain-list {
+.about-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem);
+  align-items: start;
+  gap: clamp(1.75rem, 5vw, 3.5rem);
+  margin-bottom: clamp(3.5rem, 8vw, 5rem);
+}
+
+.about-profile > div > p:first-child { margin-top: 0; }
+
+.about-role,
+.career-path__label {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-role { margin-bottom: 1.4rem; }
+.about-portrait { margin: 0; }
+.about-portrait picture,
+.about-portrait img { display: block; }
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--line);
+  filter: saturate(0.78) contrast(1.03);
+}
+.about-portrait figcaption {
+  margin-top: 0.65rem;
+  color: var(--faint);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.career-path {
+  margin: 0 calc((100vw - min(100vw - 2.5rem, var(--max))) / -2) clamp(3.5rem, 8vw, 5rem);
+  padding: clamp(1.4rem, 3.5vw, 2.2rem) max(1.25rem, calc((100vw - min(100vw - 2.5rem, var(--max))) / 2));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.career-path__label { margin: 0 0 1.25rem; }
+.career-path ol {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.inline-list {
-  display: flex;
-  gap: 0.55rem 1.1rem;
-  flex-wrap: wrap;
+.career-path li {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 1rem 1rem 0 0;
 }
-.profile-groups {
-  margin-top: 3.5rem;
+.career-path li:not(:last-child)::after {
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  width: calc(100% - 0.65rem);
+  height: 1px;
+  background: var(--line);
+  content: "";
 }
-.profile-groups h2 {
+.career-path li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  content: "";
+}
+.career-path li:last-child::before { background: var(--accent); }
+.career-path span {
+  color: var(--faint);
   font-family: var(--sans);
-  font-size: 0.85rem;
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
 }
-.profile-groups a {
-  font-size: 0.82rem;
+.career-path strong {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.profile-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 2.5rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+}
+.profile-icons__group { min-width: max-content; }
+.profile-icons__group > p {
+  margin: 0 0 0.75rem;
+  color: var(--faint);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.profile-icons ul {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.profile-icons a {
+  position: relative;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--bg);
+  text-decoration: none;
+  transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+.profile-icons a:hover {
+  border-color: var(--accent);
+  color: var(--bg);
+  background: var(--accent);
+}
+.profile-icons a::after {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  padding: 0.25rem 0.42rem;
+  transform: translateX(-50%);
+  color: var(--bg);
+  background: var(--text);
+  content: attr(data-label);
+  font-size: 0.65rem;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.profile-icons a:hover::after,
+.profile-icons a:focus-visible::after { opacity: 1; }
+.icon-mark {
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.icon-mark--scholar { font-size: 1.45rem; font-weight: 500; transform: rotate(-18deg); }
+.icon-mark--orcid { font-size: 0.66rem; letter-spacing: -0.1em; }
+.icon-mark--scopus { font-family: var(--serif); font-size: 1.1rem; font-style: italic; }
+.icon-mark--researchgate { color: #00a179; font-size: 0.65rem; }
+.icon-mark--github { font-size: 0.62rem; letter-spacing: -0.15em; }
+.icon-mark--anooplab { font-family: var(--serif); font-size: 0.75rem; }
+.icon-mark--linkedin { color: #0a66c2; font-size: 0.92rem; }
+.icon-mark--x { font-size: 0.9rem; font-weight: 500; }
+.icon-mark--instagram { font-size: 1.25rem; font-weight: 500; }
+.icon-mark--facebook { color: #1877f2; font-family: Arial, sans-serif; font-size: 1.25rem; font-weight: 700; }
+.profile-icons a:hover .icon-mark { color: inherit; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .site-footer {
@@ -468,8 +634,28 @@ h3 {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
-  .link-grid,
-  .profile-groups {
+  .about-profile { grid-template-columns: 1fr; }
+  .about-portrait {
+    width: min(100%, 24rem);
+    justify-self: center;
+  }
+  .career-path ol {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .career-path li {
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0 0 0.75rem 1.25rem;
+  }
+  .career-path li:not(:last-child)::after {
+    top: 0.55rem;
+    left: 0.25rem;
+    width: 1px;
+    height: calc(100% - 0.35rem);
+  }
+  .career-path li::before { top: 0.3rem; }
+  .link-grid {
     grid-template-columns: 1fr;
   }
   .site-footer__inner {
