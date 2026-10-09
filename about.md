@@ -76,11 +76,19 @@ Lectures, conference contributions, workshops and other academic activities are 
 - **MSc Chemistry, 1998** — School of Chemical Sciences, Mahatma Gandhi University.
 - **BSc Chemistry, 1996** — Nirmala College, Muvattupuzha.
 
-## Name and scholarly record
+## Which names identify my scholarly work? {#name-and-scholarly-record}
 
 I publish as **Anakuthil Anoop**. Institutional and other public records also identify me as **Anoop Ayyappan**, **A. Anoop** or **Anakuthil Anoop Ayyappan**. These names refer to the same person.
 
-My [ORCID record](https://orcid.org/0000-0002-8116-5506) connects these name variants with my scholarly work. Publications can also be found through [Google Scholar](https://scholar.google.com/citations?user=QgKaomgAAAAJ).
+My [ORCID record](https://orcid.org/0000-0002-8116-5506) connects these name variants with my scholarly work.
+
+## Where can I find your publications? {#publications}
+
+My publications are listed in the [AnoopLab publication archive](https://anooplab.github.io/publications/) and on [Google Scholar](https://scholar.google.com/citations?user=QgKaomgAAAAJ). Search for **Anakuthil Anoop**, the name I use for scholarly publications.
+
+## What is the relationship between this site and AnoopLab? {#anooplab}
+
+This is my personal academic website, with my biography, research perspective, teaching and essays. [AnoopLab](https://anooplab.github.io/) is the computational chemistry group website, with our collective research programme, people, publications and scientific software.
 
 ## Short biography {#short-biography}
 

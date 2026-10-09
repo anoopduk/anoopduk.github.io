@@ -30,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": "{{ '/#person' | absolute_url }}",
-    "name": "Anakuthil Anoop",
+    "name": {{ site.data.profile.publication_name | jsonify }},
     "alternateName": [
       "Anoop Ayyappan",
       "A. Anoop",
@@ -46,6 +46,12 @@
       "height": 1400
     },
     "jobTitle": "Professor",
+    "email": {{ site.data.profile.email | jsonify }},
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Hyderabad" },
+      { "@type": "CollegeOrUniversity", "name": "Mahatma Gandhi University" },
+      { "@type": "CollegeOrUniversity", "name": "Nirmala College, Muvattupuzha" }
+    ],
     "worksFor": {
       "@type": "CollegeOrUniversity",
       "name": "Digital University Kerala",
@@ -74,8 +80,6 @@
     ],
     "sameAs": [
       "{{ site.data.profile.official_profile }}",
-      "https://anooplab.github.io/",
-      "https://github.com/anooplab",
       "https://scholar.google.com/citations?user=QgKaomgAAAAJ",
       "https://orcid.org/0000-0002-8116-5506",
       "https://www.scopus.com/authid/detail.uri?authorId=6508191130",

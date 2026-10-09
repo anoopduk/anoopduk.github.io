@@ -6,9 +6,13 @@ description: How I use automated chemical exploration, scientific machine learni
 permalink: /research/
 ---
 
-A computational result is only as useful as the question and the candidates that produced it. Much of my work began with calculations on a proposed structure, mechanism or molecule. Over time, the more interesting problem became what had not been proposed: alternative products, lower-energy structures and overlooked regions of chemical space.
+My research combines quantum chemistry, automated chemical exploration and scientific machine learning to discover and understand molecular structures and reactions. With students and collaborators at AnoopLab, I develop scientific software, including PyAR, and apply these methods to molecular aggregates, nanoclusters, reaction discovery and functional molecular design.
 
 [Research approach](#exploring-before-selecting) · [Using PyAR](#software) · [Research enquiries](#enquiries)
+
+## Research approach
+
+A computational result is only as useful as the question and the candidates that produced it. Much of my work began with calculations on a proposed structure, mechanism or molecule. Over time, the more interesting problem became what had not been proposed: alternative products, lower-energy structures and overlooked regions of chemical space.
 
 ## Exploring before selecting
 
@@ -30,9 +34,9 @@ These ideas are developed with students and collaborators through AnoopLab. The 
 [Read how collaborations shaped it →](https://anooplab.github.io/research/collaborations/)  
 [Browse the publication archive →](https://anooplab.github.io/publications/)
 
-## Using PyAR {#software}
+## What is PyAR? {#software}
 
-PyAR is our open-source software for exploring molecular structures and reaction candidates. The [PyAR research overview](https://anooplab.github.io/research/pyar/) explains the scientific approach and links to the supporting papers.
+PyAR (Python program for aggregation and reaction) is open-source scientific software developed within AnoopLab for generating and exploring candidate molecular structures and reactions. The [PyAR research overview](https://anooplab.github.io/research/pyar/) explains the scientific approach and links to the supporting papers.
 
 - [Documentation and examples](https://pyar.readthedocs.io/en/latest/)
 - [Source code](https://github.com/anooplab/pyar)
