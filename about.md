@@ -21,6 +21,8 @@ permalink: /about/
   </figure>
 </section>
 
+<p><a href="#short-biography">Short biography and portrait for event organisers</a> · <a href="#contact">Contact details</a></p>
+
 <section class="career-path" aria-labelledby="career-path-title">
   <p id="career-path-title" class="career-path__label">Academic trajectory</p>
   <ol>
@@ -79,6 +81,14 @@ Lectures, conference contributions, workshops and other academic activities are 
 I publish as **Anakuthil Anoop**. Institutional and other public records also identify me as **Anoop Ayyappan**, **A. Anoop** or **Anakuthil Anoop Ayyappan**. These names refer to the same person.
 
 My [ORCID record](https://orcid.org/0000-0002-8116-5506) connects these name variants with my scholarly work. Publications can also be found through [Google Scholar](https://scholar.google.com/citations?user=QgKaomgAAAAJ).
+
+## Short biography {#short-biography}
+
+A. Anoop (Anoop Ayyappan) is a Professor in the School of Digital Sciences at Digital University Kerala. His research combines quantum chemistry, automated chemical exploration and scientific machine learning to investigate molecular structures and reactions. He develops scientific software with students and collaborators through AnoopLab, including the PyAR package. Before joining Digital University Kerala in 2024, he was a faculty member in the Department of Chemistry at IIT Kharagpur. He received his PhD from the University of Hyderabad.
+
+[Download portrait (PNG)]({{ '/anoop.png' | relative_url }}) · [Previous talks and academic activities]({{ '/engagements/' | relative_url }})
+
+For a lecture, workshop or other invitation, [email me](mailto:{{ site.data.profile.email }}) with the proposed topic, audience, dates and format.
 
 ## Contact
 

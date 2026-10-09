@@ -10,9 +10,10 @@ description: A. Anoop (Anoop Ayyappan), who publishes as Anakuthil Anoop, is a p
     <h1>A. Anoop</h1>
     <p class="hero-role">Anoop Ayyappan · Professor and computational chemist</p>
     <p class="hero-lede">
-      The research programme I guide at AnoopLab combines automated chemical
-      exploration with scientific machine learning for molecular discovery. I
-      also write about teaching, universities and academic life.
+      I develop computational methods to discover molecular structures and
+      chemical reactions, combining quantum chemistry with automated search and
+      machine learning. Here you can explore my research interests, teaching
+      and writing, or find the work of our group at AnoopLab.
     </p>
     <div class="hero-actions">
       <a class="text-link" href="{{ '/research/' | relative_url }}"
@@ -24,6 +25,7 @@ description: A. Anoop (Anoop Ayyappan), who publishes as Anakuthil Anoop, is a p
       <a class="text-link" href="https://anooplab.github.io/"
         >Visit AnoopLab ↗</a
       >
+      <a class="text-link" href="#contact">Contact me →</a>
     </div>
   </div>
   <figure class="portrait">
@@ -48,78 +50,30 @@ description: A. Anoop (Anoop Ayyappan), who publishes as Anakuthil Anoop, is a p
   </figure>
 </section>
 
-<section class="section" aria-labelledby="research-heading">
+<section class="section" aria-labelledby="explore-heading">
   <div class="section-heading">
-    <h2 id="research-heading">Research</h2>
-    <p>
-      My research asks how computational chemistry can explore molecular
-      structures and reactions more systematically, and how machine learning can
-      help without obscuring chemical reasoning. The collective programme at
-      AnoopLab has two connected directions: automated chemical exploration and
-      scientific machine learning.
-    </p>
-  </div>
-  <div class="hero-actions">
-    <a class="text-link" href="{{ '/research/' | relative_url }}"
-      >How I approach research →</a
-    >
-    <a class="text-link" href="https://anooplab.github.io/research/"
-      >AnoopLab research programme ↗</a
-    >
-  </div>
-</section>
-
-<section class="section" aria-labelledby="academic-practice-heading">
-  <div class="section-heading">
-    <h2 id="academic-practice-heading">Teaching, universities and academic life</h2>
-    <p>
-      A separate strand of my work concerns teaching, research culture,
-      university governance and the institutional conditions under which
-      knowledge is produced.
-    </p>
-  </div>
-  <div class="hero-actions">
-    <a class="text-link" href="{{ '/teaching/' | relative_url }}"
-      >Teaching →</a
-    >
-    <a class="text-link" href="{{ '/writing/' | relative_url }}"
-      >Writing →</a
-    >
-    <a class="text-link" href="{{ '/engagements/' | relative_url }}"
-      >Engagements →</a
-    >
-  </div>
-</section>
-
-<section class="section" aria-labelledby="where-heading">
-  <div class="section-heading">
-    <h2 id="where-heading">Where the work lives</h2>
-    <p>
-      This site holds my perspective and writing. Group research, software and
-      official records each have their own place.
-    </p>
+    <h2 id="explore-heading">Explore my work</h2>
+    <p>Research, teaching and academic life—from the questions I investigate
+      to the courses I teach and the ideas I write about.</p>
   </div>
   <div class="link-grid">
     <article class="link-panel">
+      <h3><a href="{{ '/research/' | relative_url }}">Research interests →</a></h3>
+      <p>How automated exploration and machine learning help us find and
+        understand molecules and reactions.</p>
+      <a class="text-link" href="https://anooplab.github.io/publications/">Publications ↗</a>
+    </article>
+    <article class="link-panel">
+      <h3><a href="{{ '/teaching/' | relative_url }}">Teaching →</a></h3>
+      <p>Courses in chemistry, computation and data science at Digital
+        University Kerala and IIT Kharagpur.</p>
+      <a class="text-link" href="{{ '/engagements/' | relative_url }}">Talks and academic activities →</a>
+    </article>
+    <article class="link-panel">
       <h3><a href="https://anooplab.github.io/">AnoopLab ↗</a></h3>
-      <p>
-        Group research, collaborations, publications, software and people.
-      </p>
-    </article>
-    <article class="link-panel">
-      <h3><a href="https://github.com/anooplab">GitHub ↗</a></h3>
-      <p>
-        Source code, datasets, technical documentation and active development.
-      </p>
-    </article>
-    <article class="link-panel">
-      <h3>
-        <a href="{{ site.data.profile.official_profile }}">DUK profile ↗</a>
-      </h3>
-      <p>
-        The official institutional record of my position and current university
-        responsibilities.
-      </p>
+      <p>Meet our research group and explore its projects, collaborations
+        and scientific software.</p>
+      <a class="text-link" href="https://github.com/anooplab">Code on GitHub ↗</a>
     </article>
   </div>
 </section>
@@ -154,13 +108,20 @@ description: A. Anoop (Anoop Ayyappan), who publishes as Anakuthil Anoop, is a p
   {% endif %}
 </section>
 
-<section class="section" aria-labelledby="profiles-heading">
+<section id="contact" class="section" aria-labelledby="profiles-heading">
   <div class="section-heading">
-    <h2 id="profiles-heading">Profiles and contact</h2>
-    <p>
-      For publications, identifiers and professional connections, use the source
-      most appropriate to what you are looking for.
-    </p>
+    <h2 id="profiles-heading">Get in touch</h2>
+    <div class="contact-details">
+      <p>For research conversations, teaching enquiries or invitations,
+        email <a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a>.</p>
+      <p>School of Digital Sciences · Digital University Kerala<br />
+        Thiruvananthapuram, Kerala, India</p>
+      <ul class="contact-routes">
+        <li><a href="{{ '/research/' | relative_url }}#enquiries">Research enquiries and collaboration</a></li>
+        <li><a href="{{ '/research/' | relative_url }}#software">PyAR documentation and support</a></li>
+        <li><a href="{{ '/about/' | relative_url }}#short-biography">Short biography, portrait and invitations</a></li>
+      </ul>
+    </div>
   </div>
   {% include profile-links.html %}
 </section>

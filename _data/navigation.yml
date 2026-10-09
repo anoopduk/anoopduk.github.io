@@ -8,6 +8,8 @@
   url: /teaching/
 - label: Engagements
   url: /engagements/
+- label: Contact
+  url: /#contact
 - label: AnoopLab
   url: https://anooplab.github.io/
   external: true

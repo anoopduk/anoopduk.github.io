@@ -177,6 +177,9 @@ h3 {
 }
 
 .primary-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 650;
@@ -307,6 +310,20 @@ h3 {
   color: var(--muted);
   font-family: var(--serif);
   font-size: 1.15rem;
+}
+
+.contact-details {
+  max-width: 43rem;
+  color: var(--muted);
+}
+
+.contact-routes {
+  margin: 1.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.contact-routes li + li {
+  margin-top: 0.55rem;
 }
 
 .link-grid {
@@ -532,8 +549,8 @@ h3 {
 .profile-icons a {
   position: relative;
   display: grid;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.75rem;
+  height: 2.75rem;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
