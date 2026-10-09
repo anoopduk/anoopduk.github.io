@@ -1,14 +1,15 @@
 ---
 layout: page
-title: Research
+title: Computational chemistry research
 eyebrow: Research approach
-description: How I use automated chemical exploration, scientific machine learning and quantum chemistry to study molecular structure, reactivity and function.
+description: A. Anoop’s research in quantum chemistry, automated molecular and reaction exploration, scientific machine learning and PyAR software at AnoopLab.
 permalink: /research/
+show_author: true
 ---
 
 My research combines quantum chemistry, automated chemical exploration and scientific machine learning to discover and understand molecular structures and reactions. With students and collaborators at AnoopLab, I develop scientific software, including PyAR, and apply these methods to molecular aggregates, nanoclusters, reaction discovery and functional molecular design.
 
-[Research approach](#exploring-before-selecting) · [Using PyAR](#software) · [Research enquiries](#enquiries)
+[Research approach](#exploring-before-selecting) · [Selected studies](#selected-studies) · [Using PyAR](#software) · [Research enquiries](#enquiries)
 
 ## Research approach
 
@@ -33,6 +34,16 @@ These ideas are developed with students and collaborators through AnoopLab. The 
 [Explore the AnoopLab research programme →](https://anooplab.github.io/research/)  
 [Read how collaborations shaped it →](https://anooplab.github.io/research/collaborations/)  
 [Browse the publication archive →](https://anooplab.github.io/publications/)
+
+## Selected studies {#selected-studies}
+
+These papers illustrate the methods and applications behind the research programme:
+
+- **Automated search methods.** S. Nandi, S. R. McAnanama-Brereton, M. P. Waller and A. Anoop, “[A tabu-search based strategy for modeling molecular aggregates and binary reactions](https://doi.org/10.1016/j.comptc.2017.03.040),” *Computational and Theoretical Chemistry* **1111**, 69–81 (2017).
+- **Prebiotic reaction discovery.** S. Nandi, D. Bhattacharyya and A. Anoop, “[Prebiotic Chemistry of HCN Tetramerization by Automated Reaction Search](https://doi.org/10.1002/chem.201705492),” *Chemistry – A European Journal* **24**, 4885–4894 (2018).
+- **Search with neural-network potentials.** S. Giri and A. Anoop, “[Exploring the Chemical Space of Noncovalent Molecular Clusters Using Automated Cluster Building Algorithm and Neural Network Potential](https://doi.org/10.1002/jcc.70287),” *Journal of Computational Chemistry* **46**, e70287 (2025).
+
+The [full publication archive](https://anooplab.github.io/publications/) covers the broader programme. These examples describe computational methods and applications; candidate structures and reaction pathways require further chemical validation.
 
 ## What is PyAR? {#software}
 

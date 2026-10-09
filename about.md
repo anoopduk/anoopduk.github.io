@@ -2,7 +2,7 @@
 layout: page
 title: About
 eyebrow: A. Anoop
-description: Computational chemist, Professor at Digital University Kerala, and researcher in automated chemical exploration, scientific software and molecular discovery.
+description: A. Anoop (Anoop Ayyappan), Professor at Digital University Kerala. Biography, computational chemistry research, education and academic career.
 permalink: /about/
 ---
 

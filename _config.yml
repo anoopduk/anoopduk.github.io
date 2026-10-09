@@ -25,7 +25,6 @@ social:
     - https://scholar.google.com/citations?user=QgKaomgAAAAJ
     - https://www.scopus.com/authid/detail.uri?authorId=6508191130
     - https://www.researchgate.net/profile/Anakuthil_Anoop/publications
-    - https://github.com/anooplab
     - https://www.linkedin.com/in/anoop-a-9286125/
     - https://x.com/A_Anoop_A
     - https://www.instagram.com/a_anoop_a/
@@ -51,6 +50,10 @@ defaults:
       kind: article
       seo:
         type: BlogPosting
+  - scope:
+      path: "googlefaff2308dc9bf9f8.html"
+    values:
+      sitemap: false
 
 exclude:
   - README.md

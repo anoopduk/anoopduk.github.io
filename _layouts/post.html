@@ -13,7 +13,7 @@ layout: default
     {% endif %}
     {% if page.date %}
     <p class="article-byline">
-      <span>A. Anoop</span><span aria-hidden="true">·</span>
+      <a rel="author" href="{{ '/about/' | relative_url }}">{{ site.data.profile.name }}</a><span aria-hidden="true">·</span>
       <time datetime="{{ page.date | date_to_xmlschema }}"
         >{{ page.date | date: "%-d %B %Y" }}</time
       >

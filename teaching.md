@@ -2,7 +2,7 @@
 layout: page
 title: Teaching
 eyebrow: Courses taught
-description: Courses taught at IIT Kharagpur and Digital University Kerala.
+description: Chemistry, computation and data science courses taught by A. Anoop at Digital University Kerala and IIT Kharagpur.
 permalink: /teaching/
 ---
 

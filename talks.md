@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Engagements
+title: Talks and academic activities
 eyebrow: Events and academic activity
 description: A historical archive of conferences, workshops, lectures, orientation programmes and other academic engagements by A. Anoop.
 permalink: /engagements/
