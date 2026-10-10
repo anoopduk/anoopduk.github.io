@@ -17,7 +17,8 @@
 <script>
   (() => { try { const theme = localStorage.getItem('anoop-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch (_) {} })();
 </script>
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261009" />
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20261010" />
+<script src="{{ '/assets/js/navigation.js' | relative_url }}?v=20261010" defer></script>
 <script src="{{ '/assets/js/theme.js' | relative_url }}?v=20260811" defer></script>
 {% if page.layout == 'post' %}
   <link rel="stylesheet" href="{{ '/assets/css/writing.css' | relative_url }}" />

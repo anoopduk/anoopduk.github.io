@@ -2,7 +2,8 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="A. Anoop, home">A. Anoop</a>
-    <nav class="primary-nav" aria-label="Primary navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
       {% for item in site.data.navigation %}
         {% if item.external %}
           <a href="{{ item.url }}" target="_blank" rel="noreferrer">{{ item.label }}<span aria-hidden="true"> ↗</span></a>
